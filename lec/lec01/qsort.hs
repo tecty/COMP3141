@@ -52,6 +52,29 @@ filter'' f  = foldright ((++).(\x-> if (f x) then [x] else [] )) []
 -- filter' f (x:xs)= foldright ((:). (\x ->  if (f x) then [x] else [] )) []
 
 -- foldleft 
--- foldleft :: (a -> b -> b ) -> b -> [a] -> b 
--- foldleft f e [] = e
--- foldleft f e (x: xs) =  
+foldleft :: (b -> a -> b ) -> b -> [a] -> b 
+foldleft f e [] = e
+foldleft f e (x: xs) = foldleft f (f e x)  xs 
+
+
+-- reverse 
+reverse' :: [a] -> [a]
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++  [x]
+
+
+-- reverse using foldright 
+reverse'' :: [a] -> [a]
+reverse'' = foldright (\a tail -> tail ++ [a]) [] 
+
+-- performance reverse 
+reverse''' :: [a] -> [a]
+reverse''' l = rev l [] 
+    where 
+        rev [] ys = ys
+        -- rev (x:xs) ys = rev xs ys:x
+        rev (x:xs) ys =  rev xs (x : ys )
+
+
+reverse'''' :: [a] -> [a]
+reverse''''  = foldleft (\xs x -> x:xs) []
