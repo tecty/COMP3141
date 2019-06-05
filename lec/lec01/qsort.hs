@@ -19,4 +19,39 @@ qsort' (x:xs) =
 sum' :: [Int] -> Int
 sum' [] = 0
 sum' (x:xs) = x + sum xs 
- 
+
+-- fold right 
+foldright :: (a-> b -> b) -> b -> [a] -> b
+foldright f e [] = e
+foldright f e (x: xs) = f x (foldright f e xs)
+
+-- sum agian 
+sum'' :: [Int] -> Int
+sum'' l = foldright (+) 0 l 
+
+
+-- map 
+map' :: (a-> b )->  [a] -> [b]
+map' f [] = []
+map' f (x:xs) = f x : map' f xs
+
+-- map with fold right 
+map'' :: (a-> b )->  [a] -> [b]
+map'' f = foldright ( (:). f) []
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' f [] = []
+filter' f (x: xs) = if f x 
+                        then x : filter' f xs
+                        else filter' f xs  
+
+
+-- filter with fold right 
+filter'' :: (a -> Bool) -> [a] -> [a]
+filter'' f  = foldright ((++).(\x-> if (f x) then [x] else [] )) []
+-- filter' f (x:xs)= foldright ((:). (\x ->  if (f x) then [x] else [] )) []
+
+-- foldleft 
+-- foldleft :: (a -> b -> b ) -> b -> [a] -> b 
+-- foldleft f e [] = e
+-- foldleft f e (x: xs) =  
