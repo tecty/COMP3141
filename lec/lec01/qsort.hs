@@ -78,3 +78,31 @@ reverse''' l = rev l []
 
 reverse'''' :: [a] -> [a]
 reverse''''  = foldleft (\xs x -> x:xs) []
+
+-- units 
+units = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine","ten"]
+teens =
+    ["ten", "eleven", "twelve", "thirteen", "fourteen",
+    "fifteen", "sixteen", "seventeen", "eighteen",
+    "nineteen"]
+tens =
+    ["twenty", "thirty", "fourty", "fifty", "sixty",
+    "seventy", "eighty", "ninety"]
+convert n = units !! n 
+
+digits2 :: Int -> (Int , Int)
+digits2 n = (n `div` 10 , n `mod` 10)
+
+-- combine2 (t, u)
+--     | t == 0 = convert u
+-- | t == 1 = teens !! u 
+-- | u == 0 = tens !! (t -2)
+-- | otherwise = tens !! (t-2)  ++ "-" ++ convert u
+
+-- type String [Char]
+combine2 :: (Int, Int) -> String
+combine2 (t, u)
+    | t == 0 = convert u
+    | t == 1 = teens !! u
+    | t > 1 && u == 0 = tens !! (t-2)
+    | t > 1 && u /= 0 = tens !! (t-2)  ++ "-" ++ convert u
