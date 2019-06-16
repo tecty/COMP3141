@@ -68,14 +68,30 @@ movePoint (Point x y) (Vector xv yv)
   = Point (x + xv) (y + yv)
 
 movePictureObject :: Vector -> PictureObject -> PictureObject
-movePictureObject vec (Path points colour lineStyle) = error "'movePictureObject' unimplemented"
-
--- add other cases
-
-
+movePictureObject vec (Path points colour lineStyle) 
+  = Path (map (\x -> movePoint x vec) points) colour lineStyle
+movePictureObject vec (
+    Circle centerPO radiusPO colourPO lineStylePO fillStylePO
+  ) 
+  = Circle (movePoint centerPO vec) radiusPO colourPO lineStylePO fillStylePO
+movePictureObject vec (
+    Ellipse centerPO widthPO heightPO rotationPO colourPO lineStylePO fillStylePO
+  )
+  = Ellipse (movePoint centerPO vec)
+      widthPO heightPO rotationPO colourPO lineStylePO fillStylePO
+movePictureObject vec (
+    Polygon pointsPO colourPO lineStylePO fillStylePO
+  )
+  = Polygon (map (\x -> movePoint x vec) pointsPO) colourPO lineStylePO fillStylePO
+  
+-- let myRed = red { opacityC = 180 }
+-- let xy = (Point 400 400)
+-- let circ = Circle xy 100 myRed Solid SolidFill
+-- let v = (Vector 100 100)
+-- writeToFile [circ, movePictureObject v circ]
+-- :q
 
 -- Part 3
-
 
 -- generate the picture consisting of circles:
 -- [Circle (Point 400 400) (400/n) col Solid SolidFill,
