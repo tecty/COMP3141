@@ -99,8 +99,13 @@ movePictureObject vec (
 --  ....
 --  Circle (Point 400 400) 400 col Solid SolidFill]
 simpleCirclePic :: Colour -> Float -> Picture
-simpleCirclePic col n = error "'simpleCirclePic' unimplemented"
-
+simpleCirclePic col n = circlesArr
+  where  
+    drawCricle :: Float -> PictureObject
+    drawCricle i = Circle (Point 400 400) (i*400/n) col Solid SolidFill
+    circlesArr:: [PictureObject]
+    circlesArr = map drawCricle [1 .. n]
+    -- circlesArr = drawCricle 1
 
 -- use 'writeToFile' to write a picture to file "ex01.png" to test your
 -- program if you are not using Haskell for Mac
