@@ -18,7 +18,7 @@ tupleArrToPointArr arr = map pointByTuple arr
 -- Part 1
 -- picture of a house
 housePic :: Picture
-housePic = [door, house] ++ chimneyHouse
+housePic = [door, house]
   where
     house :: PictureObject
     house = Path (tupleArrToPointArr houseCOs) green Solid
@@ -27,9 +27,10 @@ housePic = [door, house] ++ chimneyHouse
     
 -- these are the coordinates - convert them to a list of Point
 houseCOs :: [(Float, Float)]
-houseCOs = [(300, 750), (300, 450), (270, 450), (500, 200),
-        -- the addded cor
-        (730, 450), (700, 450), (700, 750)]
+houseCOs = 
+  [(300, 750), (300, 450), (270, 450), (500, 200)]++
+  chimmyCos ++
+  [(730, 450), (700, 450), (700, 750)]
 
 doorCOs :: [(Float, Float)]
 doorCOs = [(420, 750), (420, 550), (580, 550), (580, 750)]
@@ -40,26 +41,14 @@ grey = Colour 255 255 255 128
 smokeCOs :: [(Float, Float)]
 smokeCOs = [(635, 240), (625, 230), (635, 220), (625, 210)]
 
-chimmyHouseCos :: [(Float, Float)]
-chimmyHouseCos = [(615, 325), (615, 250), (650, 250),(650, 363)]
-  -- smoke :: PictureObject
--- smoke = error "'smoke' unimplemented"
-
-chimny:: PictureObject
-chimny = Path (tupleArrToPointArr chimmyHouseCos) green Solid
-
-blackChimney:: PictureObject
-blackChimney = Path (
-    tupleArrToPointArr (
-      (head chimmyHouseCos ): (last chimmyHouseCos ):[]
-    )
-  ) black Solid
+chimmyCos :: [(Float, Float)]
+chimmyCos = [(615, 325), (615, 250), (650, 250),(650, 363)]
 
 smoke :: PictureObject
 smoke = Path (tupleArrToPointArr smokeCOs) grey Solid
 
 chimneyHouse :: Picture
-chimneyHouse = [ blackChimney,chimny, smoke]
+chimneyHouse = smoke : housePic
 
 
 -- Part 2
