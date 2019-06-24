@@ -18,7 +18,7 @@ dodgySort2 xs
 
 -- prop1 & 3 & 4, but not prop2 & 5
 dodgySort3 :: [Int] -> [Int]
-dodgySort3 xs = cycle [1]
+dodgySort3 xs = take length(xs) cycle [1]
 
 
 -- prop1 & 2 & 3 & 4, but not prop5
