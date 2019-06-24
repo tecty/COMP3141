@@ -5,12 +5,12 @@ import Codec.Picture
 
 
 art :: Picture
-art = snow 3
+art = snow 3 1.5 
 
 -- art = [snowPiece (Point 400 400) 0 1 1 white]
 
-snow :: Int -> Picture 
-snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 myBlue depth)  [0.0 , 2/8*pi ..14/8*pi]
+snow :: Int -> Float -> Picture 
+snow depth size = concat $ map (\x-> snowPieceRec (Point 400 400) x size 1 myBlue depth)  [0.0 , 2/8*pi ..14/8*pi]
 -- snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 myBlue depth)  [0.0]
     where
       myBlue  = Colour 168 244 255 255
