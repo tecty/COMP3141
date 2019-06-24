@@ -5,18 +5,18 @@ import Codec.Picture
 
 
 art :: Picture
-art = snow 5
+art = snow 3
 
 -- art = [snowPiece (Point 400 400) 0 1 1 white]
 
 snow :: Int -> Picture 
-snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 theBlue depth)  [0.0 , 2/8*pi ..14/8*pi]
--- snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 theBlue depth)  [0.0]
+snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 myBlue depth)  [0.0 , 2/8*pi ..14/8*pi]
+-- snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 myBlue depth)  [0.0]
     where
-      theBlue = Colour 168 244 255 255
+      myBlue  = Colour 168 244 255 255
+      myWhite = Colour 255 255 255 128
       -- vec = Vector 1 1
       -- rotateVec = map (\x-> rotateVector x vec)  [0.0 , 1/4*pi ..2*pi]
-      
 
       snowPiece :: Point -> Float -> Float ->  Float -> Colour -> PictureObject
       snowPiece pos angle size length color
@@ -33,22 +33,30 @@ snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 theBlue depth
                 movePoint vec2 pos,
                 movePoint vec3 pos
               ]
+
+      toWhite:: Colour  -> Colour
+      toWhite (Colour r g b y) = 
+        Colour (min (r + (( 255 - 168) `div` depth )) 255)
+          (min (g + (( 255 - 244) `div` depth ))  255)
+          255
+          (max (y - ((255 - 178) `div` depth)) 178)
+          -- (max (255 - (255 - 128) * n `div` depth) 128)
       movePointByAngleAndSize :: Point -> Float -> Float -> Point
       movePointByAngleAndSize pos angle size 
         =  movePoint (scaleVector size $ rotateVector angle $ Vector (-100.0)  (0.0)) pos
       snowPieceRec :: Point -> Float -> Float -> Float -> Colour -> Int  -> Picture
       snowPieceRec pos angle size length color n
-        | n <= 1 = [snowPiece pos angle (2.5 * size) (0.75 * length) color]
+        | n <= 1 = [snowPiece pos angle (2.5 * size) (0.75 * length) (toWhite color)]
         -- grew up 
         | n `mod` 2 ==0  = [ 
-            snowPiece pos angle (size * 0.5) (length * 2) color ,
+            snowPiece pos angle (size * 0.5) (length * 2) (toWhite color) ,
             -- flower on edge 
             snowPiece (
                 movePointByAngleAndSize pos (angle) (size * 0.95)
-              ) (angle + 2/7*pi) (size * 0.5) (length * 1.35) color ,
+              ) (angle + 2/7*pi) (size * 0.5) (length * 1.35) (toWhite color) ,
             snowPiece (
                 movePointByAngleAndSize pos (angle) (size * 0.95) 
-              ) (angle - 2/7*pi) (size * 0.5) (length *1.35) color
+              ) (angle - 2/7*pi) (size * 0.5) (length *1.35) (toWhite color)
           ] ++ snowPieceRec (
               movePointByAngleAndSize pos angle size
             ) angle (size * 0.5) length color (n - 1)
@@ -63,11 +71,11 @@ snow depth = concat $ map (\x-> snowPieceRec (Point 400 400) x 1 1 theBlue depth
               movePointByAngleAndSize pos (angle) (size * 0.95) 
             ) (angle - 2/7*pi) (size * 0.4) (length ) color (n - 1) ++
           snowPieceRec (
-              movePointByAngleAndSize pos (angle) (size * 0.45)
-            ) (angle + 2/7*pi) (size * 0.25) (length ) color (n - 3) ++
+              movePointByAngleAndSize pos (angle) (size * 0.60)
+            ) (angle + 4/9*pi) (size * 0.25) (length *0.5 ) color (n - 3) ++
           snowPieceRec (
-              movePointByAngleAndSize pos (angle) (size * 0.45) 
-          ) (angle - 2/7*pi) (size * 0.25) (length ) color (n - 3) ++
+              movePointByAngleAndSize pos (angle) (size * 0.60) 
+          ) (angle - 4/9*pi) (size * 0.25) (length *0.5 ) color (n - 3) ++
             
           snowPieceRec (
             movePointByAngleAndSize pos angle size
