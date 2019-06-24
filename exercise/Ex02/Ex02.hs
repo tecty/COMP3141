@@ -13,12 +13,12 @@ dodgySort1 xs = xs
 dodgySort2 :: [Int] -> [Int]
 dodgySort2 xs 
   | xs == []  = []
-  | otherwise = (take 1  sorted_arr) ++ sorted_arr
+  | otherwise = (head sorted_arr) : sorted_arr
     where sorted_arr = sort xs
 
 -- prop1 & 3 & 4, but not prop2 & 5
 dodgySort3 :: [Int] -> [Int]
-dodgySort3 xs = take length(xs) cycle [1]
+dodgySort3 xs = map (\x -> 1) xs
 
 
 -- prop1 & 2 & 3 & 4, but not prop5
