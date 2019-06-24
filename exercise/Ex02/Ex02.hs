@@ -11,7 +11,10 @@ dodgySort1 xs = xs
 
 -- prop1 & 2 & 3, but not prop4 & 5
 dodgySort2 :: [Int] -> [Int]
-dodgySort2 xs = nub $ sort xs
+dodgySort2 xs 
+  | xs == []  = []
+  | otherwise = (take 1  sorted_arr) ++ sorted_arr
+    where sorted_arr = sort xs
 
 -- prop1 & 3 & 4, but not prop2 & 5
 dodgySort3 :: [Int] -> [Int]
