@@ -47,10 +47,16 @@ searchTrees = sized searchTrees'
       v <- (arbitrary :: Gen Integer)
       fmap (insert v) (searchTrees' $ n - 1)
 
+prop_searchTrees = forAll searchTrees isBST
+
 ----------------------
 
 mysteryPred :: Integer -> BinaryTree -> Bool
-mysteryPred i t = error "'mysteryPred' unimplemented"
+mysteryPred i Leaf = False 
+mysteryPred i (Branch v l r )
+  | i  == v = True 
+  | i  <  v = mysteryPred i l
+  | i  >  v = mysteryPred i r
 
 
 
