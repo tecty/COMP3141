@@ -68,7 +68,8 @@ prop_mysteryPred_2 integer =
 
 ----------------------
 mysterious :: BinaryTree -> [Integer]
-mysterious t = error "'mysterious' unimplemented"
+mysterious (Branch v l r) = mysterious l ++ [v] ++  mysterious r
+mysterious _ = []
 
 
 isSorted :: [Integer] -> Bool
@@ -87,7 +88,12 @@ sortedListsWithoutDuplicates :: Gen [Integer]
 sortedListsWithoutDuplicates = fmap (nub . sort) arbitrary
 
 astonishing :: [Integer] -> BinaryTree
-astonishing xs = error "'astonishing' unimplemented"
+astonishing [] = Leaf
+astonishing xs 
+  = Branch 
+    (xs !!(length xs `div` 2 )) 
+    (astonishing (take (length xs `div` 2) xs)) 
+    (astonishing (drop ((length xs `div` 2) + 1) xs))
 
                   
 
