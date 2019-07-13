@@ -65,15 +65,17 @@ evaluate (Operator o:ts) = do
   y <- pop 
   push (o x y) >> evaluate ts
 
-  
-  calculate :: String -> Maybe Int
-  -- calculate s = pop >> evaluate >> tokenize s
+
+calculate :: String -> Maybe Int
+-- calculate s = pop >> evaluate >> tokenize s
 calculate s = another $ readCal . evaluate <$> tokenise s
-  where
+  where 
     readCal :: Calc Int -> Maybe ([Int], Int)
     readCal c = unwrapCalc(c >> pop ) []
       where unwrapCalc (C a) = a
-    
+
     another :: Maybe (Maybe ([Int], Int)) -> Maybe Int
     another (Just (Just(_, i))) = Just i
     another _ = Nothing 
+
+  --  fma
