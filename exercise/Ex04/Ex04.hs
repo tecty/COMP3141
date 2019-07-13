@@ -56,26 +56,27 @@ instance Monad Calc where
 
 -- doPush :: [Token] -> Calc ()
 
-    
 evaluate :: [Token] -> Calc Int
-evaluate [] = pure 0 
-evaluate (Number i:ts) = push i >> evaluate ts  
-evaluate (Operator o:ts) = do 
-  x <- pop
-  y <- pop 
-  push (o x y) >> evaluate ts
+evaluate xs = doEvaluate xs >> pop
+  where 
+    doEvaluate :: [Token] -> Calc Int
+    doEvaluate [] = pure 0 
+    doEvaluate (Number i:ts) = push i >> doEvaluate ts  
+    doEvaluate (Operator o:ts) = do 
+      x <- pop
+      y <- pop 
+      push (o x y) >> doEvaluate ts
 
+readCal :: Calc Int -> Maybe ([Int], Int)
+readCal c = unwrapCalc c []
+  where unwrapCalc (C a) = a
+
+another :: Maybe (Maybe ([Int], Int)) -> Maybe Int
+another (Just (Just(_, i))) = Just i
+another _ = Nothing 
 
 calculate :: String -> Maybe Int
 -- calculate s = pop >> evaluate >> tokenize s
 calculate s = another $ readCal . evaluate <$> tokenise s
-  where 
-    readCal :: Calc Int -> Maybe ([Int], Int)
-    readCal c = unwrapCalc(c >> pop ) []
-      where unwrapCalc (C a) = a
-
-    another :: Maybe (Maybe ([Int], Int)) -> Maybe Int
-    another (Just (Just(_, i))) = Just i
-    another _ = Nothing 
 
   --  fma
