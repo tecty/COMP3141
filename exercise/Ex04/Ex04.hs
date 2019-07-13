@@ -2,7 +2,7 @@ module Ex04 where
 
 import Text.Read (readMaybe)
 
-data Token = Number Int | Operator (Int -> Int -> Int)
+data Token = Number Int | Operator (Int -> Int -> Int)  
 
 parseToken :: String -> Maybe Token
 parseToken "+" = Just (Operator (+))
@@ -12,17 +12,23 @@ parseToken "*" = Just (Operator (*))
 parseToken str = fmap Number (readMaybe str)
 
 tokenise :: String -> Maybe [Token]
-tokenise = error "'tokenise' unimplemented"
-
+-- tokenise  =  sequence.(fmap parseToken <$> words)
+tokenise = mapM parseToken . words 
 
 newtype Calc a = C ([Int] -> Maybe ([Int], a))
 
 
 pop :: Calc Int
-pop = error "'pop' unimplemented"
+-- C ([Int] -> Maybe ([Int], Int))
+-- pop = error "'push' unimplemented"
+pop = C doPop
+  where 
+    doPop :: [a] -> Maybe ([a], a)
+    doPop []      = Nothing 
+    doPop (x: xs) = Just (xs,x)
 
 push :: Int -> Calc ()
-push i = error "'push' unimplemented"
+push i = C (\xs -> Just(i:xs, ()))
 
 
 instance Functor Calc where
@@ -48,9 +54,26 @@ instance Monad Calc where
           Just (s',a) -> unwrapCalc (f a) s'
     where unwrapCalc (C a) = a
 
+-- doPush :: [Token] -> Calc ()
+
+    
 evaluate :: [Token] -> Calc Int
-evaluate ts = error "'evaluate' unimplemented"
+evaluate [] = pure 0 
+evaluate (Number i:ts) = push i >> evaluate ts  
+evaluate (Operator o:ts) = do 
+  x <- pop
+  y <- pop 
+  push (o x y) >> evaluate ts
 
-calculate :: String -> Maybe Int
-calculate s = error "'calculate' unimplemented"
-
+  
+  calculate :: String -> Maybe Int
+  -- calculate s = pop >> evaluate >> tokenize s
+calculate s = another $ readCal . evaluate <$> tokenise s
+  where
+    readCal :: Calc Int -> Maybe ([Int], Int)
+    readCal c = unwrapCalc(c >> pop ) []
+      where unwrapCalc (C a) = a
+    
+    another :: Maybe (Maybe ([Int], Int)) -> Maybe Int
+    another (Just (Just(_, i))) = Just i
+    another _ = Nothing 
