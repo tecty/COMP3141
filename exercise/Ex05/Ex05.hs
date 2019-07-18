@@ -61,7 +61,18 @@ midpoint lo hi | lo <= hi  = lo + div (hi - lo) 2
                | otherwise = midpoint hi lo
 
 ai :: Player (State (Int,Int))
-ai = error "'ai' unimplemented"
+ai = Player { guess = guess, wrong = wrong }
+  where 
+    guess = do 
+      (lo, hi) <- get
+      pure $ midpoint lo hi
+
+    wrong Lower  = do 
+      (lo, hi) <- get
+      put (lo, midpoint lo hi - 1)
+    wrong Higher = do 
+      (lo, hi) <- get
+      put ( midpoint lo hi + 1 , hi )
 
 
 
