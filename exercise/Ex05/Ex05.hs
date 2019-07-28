@@ -17,7 +17,7 @@ sumFile :: IO ()
 sumFile = do
   filenames <- getArgs
   s <- readFile (head filenames)
-  writeFile ((head.tail) filenames) $ show $ sum $ map read $ lines s 
+  writeFile ((head.tail) filenames) $ show $ sum $ map (read. filter isDigit) $ lines s 
 
   
 data Player m = Player { guess :: m Int
