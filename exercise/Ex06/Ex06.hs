@@ -65,13 +65,14 @@ ex3 = Exists [False, True] $ \p ->
 -- ----------------
 eval :: Term t -> t
 eval (Con t)       = t
-eval (And a b)     = (eval a) && (eval b)
-eval (Or a b)      = (eval a) || (eval b) 
-eval (Smaller a b) = (eval a) <  (eval b)
-eval (Plus a b)    = (eval a) +  (eval b) 
+eval (And a b)     = eval a && eval b
+eval (Or a b)      = eval a || eval b
+eval (Smaller a b) = eval a <  eval b
+eval (Plus a b)    = eval a +  eval b
 -- the Name constructor is not relevant for evaluation
 -- just throw an error if it is encountered:
 eval (Name _) = error "eval: Name"   
+
 
 
 -- Checking formulas
@@ -80,14 +81,14 @@ eval (Name _) = error "eval: Name"
 satisfiable :: Formula ts -> Bool
 satisfiable (Body t) = eval t
 satisfiable (Exists as eq) = 
-  elem True $ (satisfiable.eq.Con) <$> as
+  or $ satisfiable.eq.Con <$> as
 
 
 -- Enumerating solutions of formulae
 -- ---------------------------------
 
 solutions :: Formula ts -> [ts]
-solutions (Body t) = if eval t then [()] else []
+solutions (Body t) = [() | eval t]
 solutions (Exists as eq) = 
   [(i, j) 
     | i <- filter (satisfiable.eq.Con) as ,
