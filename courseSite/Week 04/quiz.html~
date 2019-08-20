@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz (Week 4)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../index.html">Announcements</a></li>
+<li><a href="../outline.html">Course Outline</a></li>
+<li><a href="../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 1/code.html">Code </a></li>
+<li><a href="../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 2/code.html">Code </a></li>
+<li><a href="../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Quiz (Week 4)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4f04d7a">1. Minimal Specifications</a>
+<ul>
+<li><a href="#orgd509667">1.1. Question 1</a></li>
+<li><a href="#org4db44d7">1.2. Question 2</a></li>
+</ul>
+</li>
+<li><a href="#orge8f40fc">2. Data Invariants</a>
+<ul>
+<li><a href="#orge032bce">2.1. Question 3</a></li>
+<li><a href="#org5d9481e">2.2. Question 4</a></li>
+</ul>
+</li>
+<li><a href="#orgd05c9a8">3. Data Refinement</a>
+<ul>
+<li><a href="#org96565be">3.1. Question 5</a></li>
+<li><a href="#org9087ffd">3.2. Question 6</a></li>
+</ul>
+</li>
+<li><a href="#orgfa26f07">4. Code Coverage</a>
+<ul>
+<li><a href="#org3eb932a">4.1. Question 7</a></li>
+<li><a href="#orgd12291a">4.2. Question 8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+In a break with tradition, this quiz will involve content from both Week 3 and Week 4 lectures,
+as there was some stuff we missed last time.
+</p>
+
+<div id="outline-container-org4f04d7a" class="outline-2">
+<h2 id="org4f04d7a"><span class="section-number-2">1</span> Minimal Specifications</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgd509667" class="outline-3">
+<h3 id="orgd509667"><span class="section-number-3">1.1</span> Question 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Here is the fair merge function we wrote in last week's quiz, and 
+a number of QuickCheck properties that specify its correctness.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">import</span> <span class="org-type">Test.QuickCheck</span>
+<span class="org-keyword">import</span> <span class="org-type">Test.QuickCheck.Modifiers</span>
+
+<span class="org-function-name">merge</span> <span class="org-variable-name">::</span> (<span class="org-type">Ord</span> a) <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a]
+<span class="org-function-name">merge</span> (x<span class="org-type">:</span>xs) (y<span class="org-type">:</span>ys) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;</span> y     <span class="org-variable-name">=</span> x<span class="org-type">:</span>merge xs (y<span class="org-type">:</span>ys)
+                    <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> y<span class="org-type">:</span>merge (x<span class="org-type">:</span>xs) ys
+<span class="org-function-name">merge</span> xs <span class="org-type">[]</span> <span class="org-variable-name">=</span> xs
+<span class="org-function-name">merge</span> <span class="org-type">[]</span> ys <span class="org-variable-name">=</span> ys
+
+<span class="org-function-name">sorted</span> <span class="org-variable-name">::</span> <span class="org-type">Ord</span> a <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">sorted</span> (x1 <span class="org-type">:</span> x2 <span class="org-type">:</span> xs) <span class="org-variable-name">=</span> (x1 <span class="org-variable-name">&lt;=</span> x2) <span class="org-variable-name">&amp;&amp;</span> sorted (x2 <span class="org-type">:</span> xs)
+<span class="org-function-name">sorted</span> <span class="org-keyword">_</span> <span class="org-variable-name">=</span> <span class="org-type">True</span>
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Property</span>
+<span class="org-function-name">prop_1</span> (<span class="org-type">Ordered</span> xs) (<span class="org-type">Ordered</span> ys) <span class="org-variable-name">=</span> sorted (merge xs ys)
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs ys <span class="org-variable-name">=</span> length (merge xs ys) <span class="org-variable-name">==</span> length xs <span class="org-variable-name">+</span> length ys
+
+<span class="org-function-name">prop_3</span> <span class="org-variable-name">::</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Property</span>
+<span class="org-function-name">prop_3</span> (<span class="org-type">Ordered</span> xs) (<span class="org-type">Ordered</span> ys) <span class="org-variable-name">=</span> merge xs ys <span class="org-variable-name">==</span> sort (xs <span class="org-variable-name">++</span> ys)
+
+<span class="org-function-name">prop_4</span> <span class="org-variable-name">::</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_4</span> f xs ys <span class="org-variable-name">=</span> sort (map f (merge xs ys))
+              <span class="org-variable-name">==</span> sort (merge (map f xs) (map f ys))
+
+<span class="org-function-name">prop_5</span> <span class="org-variable-name">::</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">OrderedList</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Property</span>
+<span class="org-function-name">prop_5</span> f (<span class="org-type">Ordered</span> xs) (<span class="org-type">Ordered</span> ys) <span class="org-variable-name">=</span> filter f (merge xs ys) 
+                                  <span class="org-variable-name">==</span> merge (filter f xs) (filter f ys)
+</pre>
+</div>
+
+<p>
+However, running tests for all of these properties takes too long for
+the impatient programmer. This
+is because many of these properties are logically <i>redundant</i>. If property
+A implies property B, then testing for property B is not likely to fail
+if testing for property A passes. 
+</p>
+
+<p>
+What subset of these properties imply all of the others? That is, 
+which of the above properties are sufficient to establish correctness of <code>merge</code>?
+</p>
+
+<p>
+<i>Hint</i>: Think about possible <code>merge</code> implementations that would fail the above properties.
+If you can't write a <code>merge</code> implementation that fails a given property but passes all of
+the others, it's a good indication that the property is redundant.
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><code>prop_1</code>, <code>prop_2</code>, and <code>prop_3</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code>prop_1</code>, <code>prop_2</code>, <code>prop_3</code> and <code>prop_4</code></li>
+<li><span class='mark mark_incorrect'>✗</span>Just <code>prop_3</code></li>
+<li><span class='mark mark_correct'>✔</span><code>prop_2</code>, <code>prop_3</code>, and <code>prop_4</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code>prop_1</code>, <code>prop_2</code>, <code>prop_3</code>, <code>prop_4</code> and <code>prop_5</code> &#x2013; there are no redundant properties.</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Property 5 is redundant, as we can use property 3 to construct an equational proof of property 5:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-comment-delimiter">-- </span><span class="org-comment">Assuming sorted xs &amp;&amp; sorted ys</span>
+  filter f (merge xs ys)
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">prop_3 (as sorted xs &amp;&amp; sorted ys)</span>
+  filter f (sort (xs <span class="org-variable-name">++</span> ys))
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">sort/filter interchangeable</span>
+  sort (filter f (xs <span class="org-variable-name">++</span> ys))
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">filter distributes over (++)</span>
+  sort (filter f xs <span class="org-variable-name">++</span> filter f ys)
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">prop_3 [sym] (as sorted (filter f xs) &amp;&amp; sorted (filter f ys))</span>
+  merge (filter f xs) (filter f ys) 
+</pre>
+</div>
+<p>
+Property 1 is also redundant due to property 3:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-comment-delimiter">-- </span><span class="org-comment">Assuming sorted xs &amp;&amp; sorted ys</span>
+  sorted (merge xs ys)
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">prop_3 (as sorted xs &amp;&amp; sorted ys)</span>
+  sorted (sort (xs <span class="org-variable-name">++</span> ys))
+<span class="org-variable-name">==</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">sort is sorted</span>
+  <span class="org-type">True</span>
+</pre>
+</div>
+<p>
+Property 2 and 4 may at first seem similarly redundant due to property 3, however these properties do not assume
+that the input lists are sorted. A function that returns the empty list if the input lists are not sorted
+could still pass properties 3 and 4 despite not passing property 2.  And a function that that replaces all
+elements with the minimum when the input lists are not sorted could still pass properties 2 and 3 despite not
+passing 4. Thus the correct answer is option 4.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org4db44d7" class="outline-3">
+<h3 id="org4db44d7"><span class="section-number-3">1.2</span> Question 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Here's a standard (inefficient) reverse function for lists, and a collection of
+QuickCheck properties to specify it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">rev</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>]
+<span class="org-function-name">rev</span> (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> rev xs <span class="org-variable-name">++</span> [x]
+<span class="org-function-name">rev</span> <span class="org-type">[]</span>     <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_1</span> xs ys <span class="org-variable-name">=</span> rev (xs <span class="org-variable-name">++</span> ys) <span class="org-variable-name">==</span> rev ys <span class="org-variable-name">++</span> rev xs
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span>  <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs <span class="org-variable-name">=</span> length xs <span class="org-variable-name">==</span> length (rev xs)
+
+<span class="org-function-name">prop_3</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_3</span> xs x <span class="org-variable-name">=</span> count x xs <span class="org-variable-name">==</span> count x (rev xs)
+  <span class="org-keyword">where</span>
+    count x xs <span class="org-variable-name">=</span> length (filter (<span class="org-variable-name">==</span> x) xs)
+</pre>
+</div>
+
+<p>
+Which of the above properties is redundant?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><code>prop_1</code></li>
+<li><span class='mark mark_correct'>✔</span><code>prop_2</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code>prop_3</code></li>
+<li><span class='mark mark_incorrect'>✗</span>None of the above.</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Property 3 essentially says that the output of reverse is a permutation of its input. Given that,
+we already know that the lengths will be the same. Thus property 2 is redundant.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge8f40fc" class="outline-2">
+<h2 id="orge8f40fc"><span class="section-number-2">2</span> Data Invariants</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We are representing an <i>undirected graph</i> using an <i>adjacency matrix</i>.  For example, a graph of four nodes
+arranged in a rectangle:
+</p>
+
+<pre class="example">
+0 ----- 1
+|       |
+|       |
+2 ----- 3
+</pre>
+
+<p>
+Would be represented as the matrix:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">type</span> <span class="org-type">Graph</span> <span class="org-variable-name">=</span> [[<span class="org-type">Bool</span>]]
+
+<span class="org-function-name">m</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span>
+<span class="org-function-name">m</span> <span class="org-variable-name">=</span> [[<span class="org-type">False</span>, <span class="org-type">True</span>,  <span class="org-type">True</span>,  <span class="org-type">False</span>],
+     [<span class="org-type">True</span>,  <span class="org-type">False</span>, <span class="org-type">False</span>, <span class="org-type">True</span> ],
+     [<span class="org-type">True</span>,  <span class="org-type">False</span>, <span class="org-type">False</span>, <span class="org-type">True</span> ],
+     [<span class="org-type">False</span>, <span class="org-type">True</span>,  <span class="org-type">True</span>,  <span class="org-type">False</span>]]
+</pre>
+</div>
+
+<p>
+That is, the value <code class="src src-haskell">(m <span class="org-variable-name">!!</span> a) <span class="org-variable-name">!!</span> b</code> is <code>True</code> iff the node numbered <code>a</code> is connected to the node numbered <code>b</code>.
+</p>
+</div>
+
+<div id="outline-container-orge032bce" class="outline-3">
+<h3 id="orge032bce"><span class="section-number-3">2.1</span> Question 3</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Select all data invariants that should apply to our <code>Graph</code> type, assuming <code class="src src-haskell"><span class="org-function-name">g</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span></code>:
+</p>
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">transpose</span> g <span class="org-variable-name">==</span> g</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">all</span> or g</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">all</span> (<span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> length x <span class="org-variable-name">==</span> length g) g</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">map</span> reverse g <span class="org-variable-name">==</span> g</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+In order to be an adjacency matrix, the number of rows and columns must be equal, hence property 3 is needed.
+To represent an undirected graph, the transpose of the matrix must be equal to the original matrix (it is diagonally symmetrical), hence property 1.
+The second property is meaningless and not true if you have a node disconnected from all others.
+The fourth property also holds for our example, but not in general (for example if node 1 is not connected to node 3).
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org5d9481e" class="outline-3">
+<h3 id="org5d9481e"><span class="section-number-3">2.2</span> Question 4</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+We have the following graph operations:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">newGraph</span> <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">number of nodes</span>
+         <span class="org-variable-name">-&gt;</span> <span class="org-type">Graph</span>
+<span class="org-function-name">newGraph</span> n <span class="org-variable-name">=</span> replicate n (replicate n <span class="org-type">False</span>)
+
+<span class="org-function-name">connected</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> (<span class="org-type">Int</span>, <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">connected</span> g (x, y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;</span> length g <span class="org-variable-name">&amp;&amp;</span> y <span class="org-variable-name">&lt;</span> length g <span class="org-variable-name">=</span> (g <span class="org-variable-name">!!</span> x) <span class="org-variable-name">!!</span> y 
+                   <span class="org-variable-name">|</span> otherwise                    <span class="org-variable-name">=</span> <span class="org-type">False</span>
+
+<span class="org-function-name">connect</span> <span class="org-variable-name">::</span> (<span class="org-type">Int</span>, <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Graph</span>
+<span class="org-function-name">connect</span> (x, y) <span class="org-variable-name">=</span> modify y (modify x (<span class="org-variable-name">\</span><span class="org-keyword">_</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">True</span>)) <span class="org-variable-name">.</span> modify x (modify y (<span class="org-variable-name">\</span><span class="org-keyword">_</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">True</span>))
+  <span class="org-keyword">where</span>
+    modify <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> (a <span class="org-variable-name">-&gt;</span> a) <span class="org-variable-name">-&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a]
+    modify 0 f (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> f x <span class="org-type">:</span> xs
+    modify n f (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> x <span class="org-type">:</span> modify (n <span class="org-variable-name">-</span> 1) f xs
+    modify n f <span class="org-type">[]</span>     <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+</pre>
+</div>
+
+<p>
+We have defined a wellformedness predicate for our data invariants, called <code>wellformed</code>.
+Select the properties we should assert about our operations<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">wellformed</span> (newGraph n)</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">wellformed</span> (connect x y g) <span class="org-variable-name">==&gt;</span> wellformed g</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">wellformed</span> (connect x y g)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">wellformed</span> g <span class="org-variable-name">==&gt;</span> wellformed (connect x y g)</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The third property does not necessarily apply, if the input graph is not well formed.
+The second property may apply in this case, but it is not necessary nor sufficient to show our data invariants are preserved.
+</p>
+
+<p>
+The other properties states that outputs are wellformed when inputs are wellformed, which is correct.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd05c9a8" class="outline-2">
+<h2 id="orgd05c9a8"><span class="section-number-2">3</span> Data Refinement</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+For our abstract model, it's easier to think of our graph as an edge list, along with
+the overall number of nodes in the graph. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Model</span> <span class="org-variable-name">=</span> <span class="org-type">M</span> <span class="org-type">Int</span> [(<span class="org-type">Int</span>, <span class="org-type">Int</span>)]
+
+<span class="org-function-name">newGraphA</span> <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span>
+<span class="org-function-name">newGraphA</span> n <span class="org-variable-name">=</span> <span class="org-type">M</span> n <span class="org-type">[]</span>
+
+<span class="org-function-name">connectedA</span> <span class="org-variable-name">::</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> (<span class="org-type">Int</span>, <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">connectedA</span> (<span class="org-type">M</span> n es) (x,y) <span class="org-variable-name">=</span> (x,y) <span class="org-variable-name">`elem`</span> es
+
+<span class="org-function-name">connectA</span> <span class="org-variable-name">::</span> (<span class="org-type">Int</span>, <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span>
+<span class="org-function-name">connectA</span> (x, y) (<span class="org-type">M</span> n es) 
+  <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;</span> n <span class="org-variable-name">&amp;&amp;</span> y <span class="org-variable-name">&lt;</span> n <span class="org-variable-name">=</span> <span class="org-type">M</span> n ((x,y)<span class="org-type">:</span>(y,x)<span class="org-type">:</span>es)
+  <span class="org-variable-name">|</span> otherwise      <span class="org-variable-name">=</span> <span class="org-type">M</span> n es 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org96565be" class="outline-3">
+<h3 id="org96565be"><span class="section-number-3">3.1</span> Question 5</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+What is an appropriate refinement relation to connect our abstract model and our matrix implementation?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">ref</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">ref</span> g (<span class="org-type">M</span> n es) <span class="org-variable-name">=</span> length g <span class="org-variable-name">==</span> n
+              <span class="org-variable-name">&amp;&amp;</span> all (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> (g <span class="org-variable-name">!!</span> x) <span class="org-variable-name">!!</span> y) es
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">ref</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">ref</span> g (<span class="org-type">M</span> n es) <span class="org-variable-name">=</span> all (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> ((x,y) <span class="org-variable-name">`elem`</span> es) <span class="org-variable-name">==</span> ((g <span class="org-variable-name">!!</span> x) <span class="org-variable-name">!!</span> y))
+                     [(x,y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1], y <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1]]
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">ref</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">ref</span> g (<span class="org-type">M</span> n es) <span class="org-variable-name">=</span> length g <span class="org-variable-name">==</span> n 
+              <span class="org-variable-name">&amp;&amp;</span> any (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> ((x,y) <span class="org-variable-name">`elem`</span> es) <span class="org-variable-name">==</span> ((g <span class="org-variable-name">!!</span> x) <span class="org-variable-name">!!</span> y))
+                     [(x,y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n], y <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n]] 
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">ref</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">ref</span> g (<span class="org-type">M</span> n es) <span class="org-variable-name">=</span> length g <span class="org-variable-name">==</span> n 
+              <span class="org-variable-name">&amp;&amp;</span> all (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> ((x,y) <span class="org-variable-name">`elem`</span> es) <span class="org-variable-name">==</span> ((g <span class="org-variable-name">!!</span> x) <span class="org-variable-name">!!</span> y))
+                     [(x,y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1], y <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1]] 
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The first answer only looks at edges that are in the abstract graph. It would allow edges to be present in the matrix
+but not in the abstract graph.
+The second answer does not ensure that the number of nodes in the two graphs are the same.
+The third answer uses <code>any</code> rather than <code>all</code>, and its bounds are off by one.
+The fourth answer is correct.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org9087ffd" class="outline-3">
+<h3 id="org9087ffd"><span class="section-number-3">3.2</span> Question 6</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+As discussed in lectures, refinement relations aren't that useful for QuickCheck, because it's unlikely to generate 
+two related inputs by chance. Which of the following approaches would remedy this?
+</p>
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><p>
+Use this abstraction function: 
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">toAbstract</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> 
+<span class="org-function-name">toAbstract</span> g <span class="org-variable-name">=</span> <span class="org-keyword">let</span> n <span class="org-variable-name">=</span> length g 
+                <span class="org-keyword">in</span> <span class="org-type">M</span> n <span class="org-variable-name">$</span> filter (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> (g <span class="org-variable-name">!!</span> x ) <span class="org-variable-name">!!</span> y) 
+                                [(x,y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1], y <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1]]
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><p>
+Use this abstraction function:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">toAbstract</span> <span class="org-variable-name">::</span> <span class="org-type">Graph</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Model</span> 
+<span class="org-function-name">toAbstract</span> g <span class="org-variable-name">=</span> <span class="org-keyword">let</span> n <span class="org-variable-name">=</span> length g 
+                <span class="org-keyword">in</span> <span class="org-type">M</span> n <span class="org-variable-name">$</span> filter (<span class="org-variable-name">\</span>(x,y) <span class="org-variable-name">-&gt;</span> (g <span class="org-variable-name">!!</span> x ) <span class="org-variable-name">!!</span> y) 
+                                [(x,y) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n], y <span class="org-variable-name">&lt;-</span> [0<span class="org-variable-name">..</span>n]]
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><p>
+Use a refinement function:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">toConcrete</span> <span class="org-variable-name">::</span> <span class="org-type">Model</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Graph</span>
+<span class="org-function-name">toConcrete</span> (<span class="org-type">M</span> n es) 
+   <span class="org-variable-name">=</span> map (<span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> map (<span class="org-variable-name">\</span>y <span class="org-variable-name">-&gt;</span> (x,y) <span class="org-variable-name">`elem`</span> es) [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1]) [0<span class="org-variable-name">..</span>n<span class="org-variable-name">-</span>1]
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span>None of the above.</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Using an abstraction function would mean that the resultant graph <code class="src src-haskell"><span class="org-function-name">connectA</span> (x,y) (toAbstract g)</code> 
+should be <i>equal</i> to <code class="src src-haskell"><span class="org-function-name">toAbstract</span> (connect (x,y) g)</code>.
+This is not the case for either of the provided abstraction functions.
+</p>
+
+<p>
+The refinement function is correct.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfa26f07" class="outline-2">
+<h2 id="orgfa26f07"><span class="section-number-2">4</span> Code Coverage</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org3eb932a" class="outline-3">
+<h3 id="org3eb932a"><span class="section-number-3">4.1</span> Question 7</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+What are some examples of test <i>code coverage</i> measures?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span>Function coverage, statement coverage, branch coverage</li>
+<li><span class='mark mark_incorrect'>✗</span>Static coverage, dynamic coverage</li>
+<li><span class='mark mark_incorrect'>✗</span>Memory coverage, execution coverage, control-flow coverage</li>
+<li><span class='mark mark_incorrect'>✗</span>Condition coverage, program coverage, data coverage</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Statement coverage is sometimes called "expression" coverage in a language
+like Haskell, which has no statements. Branch coverage is sometimes called
+"decision" coverage, and is closely related to "condition" coverage which
+checks the results of evaluating conditions in (e.g.) <code>if</code> expressions
+to determine if conditions have evaluated to both <code>True</code> and <code>False</code>.
+</p>
+
+</div>
+
+</div>
+</div>
+<div id="outline-container-orgd12291a" class="outline-3">
+<h3 id="orgd12291a"><span class="section-number-3">4.2</span> Question 8</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Why is full <i>path coverage</i> generally infeasible?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span>Loops may lead to infinite paths</li>
+<li><span class='mark mark_incorrect'>✗</span>Full path coverage analysis is undecidable in general</li>
+<li><span class='mark mark_incorrect'>✗</span>The number of paths grows at least exponentially with the size of the computation.</li>
+<li><span class='mark mark_incorrect'>✗</span>Full path coverage requires simulating the program for every possible input.</li>
+<li><span class='mark mark_correct'>✔</span>All of the above.</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+This is not to say that fully checking <i>some properties</i> for <i>some programs</i> is 
+impossible. In general, the field of <a href="https://en.wikipedia.org/wiki/Model_checking">Model Checking</a> is devoted to solving
+this kind of intractable problem for restricted models, properties, or both.
+</p>
+
+</div>
+
+
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+: This is not the same as selecting the properties which are true. Which properties are necessary to maintain our data invariants?
+</p></div></div>
+
+
+</div>
+</div><div class='submission_box'> Submission is already closed for this quiz. You can click <a href='https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/submit_quiz?quizname=quiz05'>here</a> to check your submission (if any). </div></div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

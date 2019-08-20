@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exercise (Week 8)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../index.html">Announcements</a></li>
+<li><a href="../outline.html">Course Outline</a></li>
+<li><a href="../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 1/code.html">Code </a></li>
+<li><a href="../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 2/code.html">Code </a></li>
+<li><a href="../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Exercise (Week 8)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga1aa23d">1. Evaluating Terms (2 marks)</a></li>
+<li><a href="#orga258e3d">2. Satisfiability check (3 marks)</a></li>
+<li><a href="#orge33ad88">3. Enumerating Solutions (4 marks)</a></li>
+<li><a href="#org9ad945f">4. Submission instructions</a></li>
+</ul>
+</div>
+</div>
+
+<div class="figure">
+<p><img src="../statics/Ex06-icon.gif" alt="Ex06-icon.gif" style="width:50px;" />
+</p>
+</div>
+
+<p>
+<b>DUE</b>: 30 July, 2019 14:00
+</p>
+
+<div class='tabset'><input type=radio name=tabset1 id=tab1_1 checked><label for='tab1_1'>CSE</label><input type=radio name=tabset1 id=tab1_2><label for='tab1_2'>Stack</label><div class="TABS">
+<div class="TAB">
+<p>
+Download the <a href="../statics/Ex06.tar.gz">exercise tarball</a> and extract it to a directory in your 
+home directory at CSE. This tarball contains a file, called <code>Ex06.hs</code>,
+wherein you will do all of your programming.
+</p>
+
+<p>
+To test your code, run the following shell commands to open a GHCi 
+session:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ 3141
+newclass starting new subshell for class COMP3141...
+$ cabal repl
+Resolving dependencies...
+Configuring Ex06-1.0...
+Preprocessing executable <span class="org-string">'Ex06'</span> for Ex06-1.0..
+GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Ex06          (Ex06.hs, interpreted)
+Ok, one module loaded.
+*Ex06&gt; solutions e3
+...
+</pre>
+</div>
+
+<p>
+Note that you will only need to submit <code>Ex06.hs</code>, so only make changes
+to that file.
+</p>
+
+</div>
+
+<div class="TAB">
+<p>
+Download the <a href="../statics/Ex06.tar.gz">exercise tarball</a> and extract it to a directory on
+your local machine. This tarball contains a file, called <code>Ex06.hs</code>,
+wherein you will do all of your programming.
+</p>
+
+<p>
+To test your code, run the following shell commands to open a GHCi 
+session:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ stack repl
+Configuring GHCi with the following packages: Ex06
+Using main module: 1. Package <span class="org-string">'Ex06'</span> component exe:Ex06 ...
+GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Ex06          (Ex06.hs, interpreted)
+Ok, one module loaded.
+*Ex06&gt; solutions e3
+...
+</pre>
+</div>
+
+<p>
+Note that you will only need to submit <code>Ex06.hs</code>, so only make changes
+to that file.
+</p>
+
+</div>
+
+</div>
+
+</div><p>
+Logical formulas (often called constraints) ranging over finite domains (i.e., where variables are drawn from sets with a finite number of elements) are useful in a wide array of application areas ranging from solving planning problems, over compiler optimisations, to code verification. Given such formulas, we are usually interested in either whether there exists a solution (i.e. instantiation of all variables) that satisfy the logical formula or in the solutions themselves.
+You will have to perform the following tasks in this exercise:
+</p>
+
+<ul class="org-ul">
+<li>Write an evaluator for (unquantified) formula terms, using a GADT representation,</li>
+<li>check for the satisfiability of logical formulas, and</li>
+<li>compute the solution set of logical formulas.</li>
+</ul>
+
+<p>
+We will do that for a very simple logic to keep it manageable, namely
+formulae of the form:
+</p>
+
+<p>
+\[ \exists x_1 \in S_1.\ \exists x_2 \in S_2.\ \dots\ \exists x_n \in S_n.\ \phi \]
+</p>
+
+<p>
+where \(\phi\) is a term without any quantifiers and the sets \(S_1 \dots S_n\) are
+all finite.
+</p>
+
+<p>
+Our language of quantifier-free terms is indexed by the type of the term: <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Term</span> t <span class="org-keyword">where</span>
+  <span class="org-type">Con</span>     <span class="org-variable-name">::</span> t <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> t <span class="org-comment-delimiter">-- </span><span class="org-comment">Constant values</span>
+
+  <span class="org-comment-delimiter">-- </span><span class="org-comment">Logical operators</span>
+  <span class="org-type">And</span>     <span class="org-variable-name">::</span> <span class="org-type">Term</span> <span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Bool</span>
+  <span class="org-type">Or</span>      <span class="org-variable-name">::</span> <span class="org-type">Term</span> <span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Bool</span>
+
+  <span class="org-comment-delimiter">-- </span><span class="org-comment">Comparison operators</span>
+  <span class="org-type">Smaller</span> <span class="org-variable-name">::</span> <span class="org-type">Term</span> <span class="org-type">Int</span>  <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Int</span>  <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Bool</span>
+
+  <span class="org-comment-delimiter">-- </span><span class="org-comment">Arithmetic operators</span>
+  <span class="org-type">Plus</span>    <span class="org-variable-name">::</span> <span class="org-type">Term</span> <span class="org-type">Int</span>  <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Int</span>  <span class="org-variable-name">-&gt;</span> <span class="org-type">Term</span> <span class="org-type">Int</span>
+</pre>
+</div>
+
+<p>
+For example, the term <code>Con True</code> is of type <code>Term Bool</code>, and
+the term <code>Plus (Con 2) (Con 10)</code> is of type <code>Term Int</code>.
+</p>
+
+<p>
+Our language of formulae (including quantifiers) 
+is indexed by the types of each quantified variable:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Formula</span> ts <span class="org-keyword">where</span>
+  <span class="org-type">Body</span>   <span class="org-variable-name">::</span> <span class="org-type">Term</span> <span class="org-type">Bool</span>                     <span class="org-variable-name">-&gt;</span> <span class="org-type">Formula</span> <span class="org-type">()</span>
+  <span class="org-type">Exists</span> <span class="org-variable-name">::</span> <span class="org-type">Show</span> a 
+         <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> (<span class="org-type">Term</span> a <span class="org-variable-name">-&gt;</span> <span class="org-type">Formula</span> as) <span class="org-variable-name">-&gt;</span> <span class="org-type">Formula</span> (a, as)
+</pre>
+</div>
+
+<p>
+For example, the following formula (<code>ex3</code> in the code):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-type">Exists</span> [<span class="org-type">False</span>, <span class="org-type">True</span>] <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>p <span class="org-variable-name">-&gt;</span>
+  <span class="org-type">Exists</span> [0<span class="org-variable-name">..</span>2] <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>n <span class="org-variable-name">-&gt;</span>
+    <span class="org-type">Body</span> <span class="org-variable-name">$</span> p `<span class="org-type">Or</span>` (<span class="org-type">Con</span> 0 `<span class="org-type">Smaller</span>` n)
+</pre>
+</div>
+
+<p>
+Has the type <code>Formula (Bool, (Int, ()))</code> to reflect the types of
+the two quantified variables.
+</p>
+
+<div id="outline-container-orga1aa23d" class="outline-2">
+<h2 id="orga1aa23d"><span class="section-number-2">1</span> Evaluating Terms (2 marks)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Write a function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">eval</span> <span class="org-variable-name">::</span> <span class="org-type">Term</span> t <span class="org-variable-name">-&gt;</span> t
+</pre>
+</div>
+
+<p>
+That recursively evaluates the term to its result.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga258e3d" class="outline-2">
+<h2 id="orga258e3d"><span class="section-number-2">2</span> Satisfiability check (3 marks)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Secondly, implement a function
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">satisfiable</span> <span class="org-variable-name">::</span> <span class="org-type">Formula</span> ts <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+</pre>
+</div>
+
+<p>
+that determines whether a given formula is satisfiable &#x2013; i.e. whether there is an assignment of values to all existentially quantified variables (those with the <code>Exists</code> constructor), such that the body of the formula evaluates to <code>True</code>. Given the examples provided in the code, we expect:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> satisfiable ex1
+<span class="org-type">True</span>
+<span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> satisfiable ex2
+<span class="org-type">True</span>
+<span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> satisfiable ex3
+<span class="org-type">True</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge33ad88" class="outline-2">
+<h2 id="orge33ad88"><span class="section-number-2">3</span> Enumerating Solutions (4 marks)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Finally, implement
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">solutions</span> <span class="org-variable-name">::</span> <span class="org-type">Formula</span> ts <span class="org-variable-name">-&gt;</span> [ts]
+</pre>
+</div>
+
+<p>
+which computes a list of all the solutions for a <code>Formula</code>. Each individual solution is of the same type as the type index of the formula with one value for each existentially quantified variable. Again, considering the examples from <code>Formula.hs</code>, we expect:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> solutions ex1
+[<span class="org-type">()</span>]
+<span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> solutions ex2
+[(1,<span class="org-type">()</span>),(2,<span class="org-type">()</span>),(3,<span class="org-type">()</span>),(4,<span class="org-type">()</span>),(5,<span class="org-type">()</span>),(6,<span class="org-type">()</span>),(7,<span class="org-type">()</span>),(8,<span class="org-type">()</span>),(9,<span class="org-type">()</span>),(10,<span class="org-type">()</span>)]
+<span class="org-variable-name">*</span><span class="org-type">Ex06</span><span class="org-variable-name">&gt;</span> solutions ex3
+[(<span class="org-type">False</span>,(1,<span class="org-type">()</span>)),(<span class="org-type">False</span>,(2,<span class="org-type">()</span>)),(<span class="org-type">True</span>,(0,<span class="org-type">()</span>)),(<span class="org-type">True</span>,(1,<span class="org-type">()</span>)),(<span class="org-type">True</span>,(2,<span class="org-type">()</span>))]
+</pre>
+</div>
+<p>
+What would be the result for a formula that is not satisfiable?
+</p>
+
+<p>
+<i>Note</i>: You can use the <i>list monad</i> or list comprehensions here to make
+<code>solutions</code> a very short definition.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ad945f" class="outline-2">
+<h2 id="org9ad945f"><span class="section-number-2">4</span> Submission instructions</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-shell">$ give cs3141 Ex06 Ex06.hs
+</pre>
+</div>
+<p>
+on a CSE terminal, or by using the <code>give</code> web interface. Your file <i>must</i> be named <code>Ex06.hs</code> (case-sensitive!).
+A dry-run test will <i>partially</i> autotest your solution at submission time. To get full marks, you will need to 
+perform further testing yourself.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Note that there is also a <code>Name</code> constructor given in the code,
+however this constructor is <b>only</b> used for pretty printing and is not
+relevant to any of the functions you have to implement.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

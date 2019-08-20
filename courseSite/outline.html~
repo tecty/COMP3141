@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Course Outline</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="index.html">Announcements</a></li>
+<li><a href="outline.html">Course Outline</a></li>
+<li><a href="Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="Assignment 1/code.html">Code </a></li>
+<li><a href="Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="Assignment 2/code.html">Code </a></li>
+<li><a href="Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="Week 02/exercise.html">Exercise </a></li>
+<li><a href="Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="Week 03/exercise.html">Exercise </a></li>
+<li><a href="Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="Week 04/exercise.html">Exercise </a></li>
+<li><a href="Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 04/1Tue/code.html">Code </a></li>
+<li><a href="Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="Week 06/exercise.html">Exercise </a></li>
+<li><a href="Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="Week 07/notes.html">Additional Reading </a></li>
+<li><a href="Week 07/exercise.html">Exercise </a></li>
+<li><a href="Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 07/2Wed/code.html">Code </a></li>
+<li><a href="Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="Week 08/exercise.html">Exercise </a></li>
+<li><a href="Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Course Outline</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6bdd954">1. Course Details</a></li>
+<li><a href="#orgff8e4f7">2. Staff</a></li>
+<li><a href="#orgc57fc4a">3. Course Summary</a></li>
+<li><a href="#org6d22e60">4. Course Timetable</a></li>
+<li><a href="#orgd887519">5. Outcomes</a></li>
+<li><a href="#org9416f54">6. Assumed Knowledge</a></li>
+<li><a href="#orgbc18cf6">7. Teaching Strategies</a>
+<ul>
+<li><a href="#org6f3d7f7">7.1. Lectures</a></li>
+<li><a href="#org0247124">7.2. Exercises</a></li>
+<li><a href="#org09087c2">7.3. Quizzes</a></li>
+<li><a href="#org33b9a1c">7.4. Assignments</a></li>
+</ul>
+</li>
+<li><a href="#org70d74e3">8. Assessment</a>
+<ul>
+<li><a href="#org88f5c03">8.1. Practical Work</a></li>
+<li><a href="#org428fbc1">8.2. Assignments</a></li>
+<li><a href="#org6781781">8.3. Exercises</a></li>
+<li><a href="#org982a09f">8.4. Quizzes</a></li>
+<li><a href="#orgc29ad6c">8.5. Final Examination</a></li>
+<li><a href="#org1dc19e6">8.6. Examination Hurdle</a></li>
+</ul>
+</li>
+<li><a href="#org4a1cb17">9. Student Conduct</a></li>
+<li><a href="#org7b331f3">10. Course Schedule</a></li>
+<li><a href="#org1487d88">11. Resources for Students</a>
+<ul>
+<li><a href="#org82638bd">11.1. Getting Help</a></li>
+</ul>
+</li>
+<li><a href="#org93cce85">12. Course Evaluation and Development</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6bdd954" class="outline-2">
+<h2 id="org6bdd954"><span class="section-number-2">1</span> Course Details</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Course Code</b></td>
+<td class="org-left">COMP3141</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Course Title</b></td>
+<td class="org-left">Software System Design and Implementation</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Units of Credit</b></td>
+<td class="org-left">6</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Course Website</b></td>
+<td class="org-left"><a href="https://www.cse.unsw.edu.au/~cs3141">https://www.cse.unsw.edu.au/~cs3141</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Handbook Entry</b></td>
+<td class="org-left"><a href="http://www.handbook.unsw.edu.au/undergraduate/courses/current/COMP3141.html">COMP3141 UNSW Handbook Entry</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgff8e4f7" class="outline-2">
+<h2 id="orgff8e4f7"><span class="section-number-2">2</span> Staff</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Name</b></td>
+<td class="org-left"><b>Role</b></td>
+<td class="org-left"><b>Contact</b></td>
+</tr>
+
+<tr>
+<td class="org-left">Liam O'Connor</td>
+<td class="org-left">Lecturer in Charge</td>
+<td class="org-left">liamoc@cse.unsw.edu.au</td>
+</tr>
+
+<tr>
+<td class="org-left">Christine Rizkallah</td>
+<td class="org-left">Lecturer</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgc57fc4a" class="outline-2">
+<h2 id="orgc57fc4a"><span class="section-number-2">3</span> Course Summary</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This course presents a variety of programming techniques that 
+make use of semi-formal and formal methods for the design and
+implementation phases of real-world software system development. It introduces approaches
+to testing informed by formal designs, and it discusses trade-offs between
+static and dynamic approaches to improving software correctness. Throughout
+the course, the discussed methods are supported by software tools that assist
+in managing design, implementation, and testing. The course content is
+illustrated by weekly programming case studies and regular practical exercises.
+Central topics are the
+use of functional programming, logical properties and types to inform program design, implementation,
+validation, and verification. The course will introduces students to the
+strongly-typed Haskell programming language. No previous knowledge of Haskell
+is assumed. 
+</p>
+
+<p>
+As with any course which teaches a potentially unfamiliar language, 
+this course involves a significant amount of programming, both during and outside
+of lectures.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d22e60" class="outline-2">
+<h2 id="org6d22e60"><span class="section-number-2">4</span> Course Timetable</h2>
+<div class="outline-text-2" id="text-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Day</b></td>
+<td class="org-right"><b>Time</b></td>
+<td class="org-left"><b>Location</b></td>
+<td class="org-left"><b>Lecturer</b></td>
+</tr>
+
+<tr>
+<td class="org-left">Tuesday</td>
+<td class="org-right">14:00-16:00</td>
+<td class="org-left">Law Theatre G04</td>
+<td class="org-left">Liam O'Connor</td>
+</tr>
+
+<tr>
+<td class="org-left">Wednesday</td>
+<td class="org-right">09:00-11:00</td>
+<td class="org-left">Law Theatre G04</td>
+<td class="org-left">Christine Rizkallah</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgd887519" class="outline-2">
+<h2 id="orgd887519"><span class="section-number-2">5</span> Outcomes</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+After completing this course, you should
+</p>
+
+<ul class="org-ul">
+<li>be comfortable with using Haskell and functional programming to write 
+practical software.</li>
+<li>be able to specify programs in terms of logical properties and 
+functional correctness.</li>
+<li>distinguish and balance the trade-offs between static methods (such as
+formal methods and type systems) and dynamic methods (such as testing) in
+assisting software design and implementation.</li>
+<li>understand the role of types in program design, implementation, validation,
+and verification.</li>
+<li>be able to use a variety of tools based on formal specifications of logical
+properties.</li>
+</ul>
+
+<p>
+The course gradually exposes students to a mathematically founded approach to specifying
+and implementing software systems. It develops basic skills required to
+engineer software with high confidence in the correctness of the final
+product. The whole course encourages critical examination and analysis of
+existing solutions.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9416f54" class="outline-2">
+<h2 id="org9416f54"><span class="section-number-2">6</span> Assumed Knowledge</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+You need to have successfully completed the core programming, algorithm, and
+software development courses. You should be a confident coder and be prepared
+to study the concepts of a new programming language in directed self-study.
+</p>
+
+<p>
+The prerequisites of COMP3141 are COMP1927 or COMP2521,
+or a mark of at least 65 in COMP1921.
+</p>
+
+<p>
+The course makes use of a number of discrete mathematics concepts. While it is
+possible to do well in the course without having done MATH1081 or COMP2111, 
+familiarity with logic and set theory is valuable when studying COMP3141.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc18cf6" class="outline-2">
+<h2 id="orgbc18cf6"><span class="section-number-2">7</span> Teaching Strategies</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org6f3d7f7" class="outline-3">
+<h3 id="org6f3d7f7"><span class="section-number-3">7.1</span> Lectures</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+The lectures will introduce you to new material, which is being reinforced
+and practised in weekly exercises and larger assignments. The course follows
+no particular textbook, but reading material covering specific topics will be
+identified throughout the course. Students are required to study reading
+material as advised during the lecture and/or on the course web page.
+</p>
+
+<p>
+There are three to four hours of lectures each week. The first two hour 
+slot will be an <i>introduction</i> lecture, generally delivered by Liam. This 
+will introduce you to the various concepts in the course. The second 
+two hour slot will be a <i>reinforcement</i> lecture, generally delivered by 
+Christine. This will apply the concepts introduced by Liam in the previous 
+lecture to various examples.
+</p>
+
+<p>
+Although there are no labs for this course, it does involve a significant amount
+of Haskell programming. For this reason, it's important
+to stay up to date with the Haskell level of the rest of the cohort. If you
+find yourself falling behind, please arrange a consultation with a lecturer
+to get caught up.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0247124" class="outline-3">
+<h3 id="org0247124"><span class="section-number-3">7.2</span> Exercises</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Weekly marked programming exercises start in Week 2. There will be 7
+exercises, including one art peer review assessment run from weeks 4 to 6.
+These exercises will reinforce the material discussed in the week's
+lecture.
+</p>
+
+<p>
+Students have approximately one week to submit a solution. Submitting
+solutions to the exercises is compulsory, and solutions will be automatically
+marked. Solutions to exercises will not be accepted late. Automarking results
+are binding. Exercises will generally not be manually remarked. There are no
+extensions to exercises, excepting special considerations.
+</p>
+
+<p>
+Solutions to the exercises will be discussed in the second half of lectures
+each week.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09087c2" class="outline-3">
+<h3 id="org09087c2"><span class="section-number-3">7.3</span> Quizzes</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+A total of 8 weekly marked quizzes will be made available, starting in Week 1. 
+They will assess the theoretical lecture content for that week in a series
+of multiple choice questions, and will be due on the Friday of the following
+week. For example, the quiz for the Week 1 lectures will be due on the Friday
+of week 2. Students are encouraged to submit the quiz soon after the lectures
+for the week have concluded, as part of a weekly review.
+</p>
+
+<p>
+The quizzes are available on the course website. Students can submit as many
+times as they like up until the due date, however solutions are shown after the
+due date, so late submission of the quizzes will not be accepted.
+</p>
+
+<p>
+These quizzes are all automatically marked.
+</p>
+
+<p>
+In general, the difficulty of the quizzes is not indicative of any other 
+component such as the exam.
+The quizzes help to consolidate lecture content, 
+but sometimes the quiz questions will require some lateral thinking or 
+referring to the lecture code, slides, or notes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org33b9a1c" class="outline-3">
+<h3 id="org33b9a1c"><span class="section-number-3">7.4</span> Assignments</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+There will be two practical assignments. They will be released approximately
+around Week 4 and Week 8. Students will have between one and two weeks to
+understand each individual assignment and to develop a solution.
+</p>
+
+<p>
+Unless otherwise stated if you wish to submit an assignment late, you may do
+so, but a late penalty reducing the maximum available mark applies to every
+late assignment. The maximum available mark is reduced by 10% if the
+assignment is one day late, by 25% if it is 2 days late and by 50% if it is 3
+days late. Assignments that are late 4 days or more will be awarded zero
+marks. So if your assignment is worth 88% and you submit it one day late you
+still get 88%, but if you submit it two days late you get 75%, three days
+late 50%, and four days late zero.
+</p>
+
+<p>
+Assignment extensions are only awarded for serious and unforeseeable events.
+Having the flu for a few days, deleting your assignment by mistake, going on
+holiday, work commitments, and so on do not qualify. Therefore aim to
+complete your assignments well before the due date in case of last minute
+illness, and make regular backups of your work.
+</p>
+
+<p>
+Assignments are being marked automatically. You need to make sure to follow
+the instructions closely. Failure to follow the details of the assignment
+specification is no reason for re-marking, even if small mistakes lead to a
+substantial loss of marks.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org70d74e3" class="outline-2">
+<h2 id="org70d74e3"><span class="section-number-2">8</span> Assessment</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Assessment consists of a practical component and a final examination. The
+break down of the practical component is as follows:
+</p>
+
+
+<ul class="org-ul">
+<li>Assignment 1: 20 marks</li>
+<li>Assignment 2: 20 marks</li>
+<li>Weekly assessments, consisting of:
+<ul class="org-ul">
+<li>Weekly Exercises: 40 marks</li>
+<li>Weekly Quizzes: 20 marks</li>
+</ul></li>
+</ul>
+
+<p>
+Both the practical component and the final examination are out of 100. The
+final grade for the course is determined by the mean between the
+practical component and the final examination.
+</p>
+</div>
+
+
+<div id="outline-container-org88f5c03" class="outline-3">
+<h3 id="org88f5c03"><span class="section-number-3">8.1</span> Practical Work</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+Assignments and exercises are an important part of the course. They are an
+essential way of learning the practical skills you need to acquire. Any
+plagiarism in assignments or exercises will be severely punished and may
+result in an automatic Fail for the whole course. Read the plagiarism warning
+below for more details.
+</p>
+
+<p>
+For each assignment, you will have up to two weeks from release of the
+specification until the submission deadline. The specifications will be
+posted on the course web page.
+</p>
+
+<p>
+Assignment work can be completed on the workstations at UNSW or on a computer
+at home. Your assignment must properly run on the computers at UNSW; so, test
+them at UNSW if you develop them at home. Unless otherwise stated,
+assignments must be submitted on-line from a school terminal using the give
+command. It is in your best interest to make regular backup copies of your
+work and (because of machine loads on deadline days, for example) to complete
+assignments well before their deadlines. Moreover, the electronic submission
+system give allows you to submit an assignment multiple times; only the last
+submission will be marked. We suggest that you submit a version once you have
+a partially complete solution and repeatedly submit whenever you improved
+your solution significantly. In particular, make sure that you submit your
+solution once you have completed the core component of each assignment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org428fbc1" class="outline-3">
+<h3 id="org428fbc1"><span class="section-number-3">8.2</span> Assignments</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+Each assignment is individual; i.e., no team work of any kind is permitted.
+Completing and submitting all assignments is compulsory; i.e., each
+assignment has a core component and you will not be permitted to pass the
+course unless you have made a reasonable effort to solve the core component.
+A "reasonable effort" means that there may be bugs in your solution, but you
+must submit an at least partially working piece of adequately structured
+code.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6781781" class="outline-3">
+<h3 id="org6781781"><span class="section-number-3">8.3</span> Exercises</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+There will be a number of programming exercises distributed throughout the term. 
+Each is marked with equal weighting. Each exercise is
+individual; i.e., no team work of any kind is permitted. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org982a09f" class="outline-3">
+<h3 id="org982a09f"><span class="section-number-3">8.4</span> Quizzes</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+There will be 8 weekly quizzes.
+Each quiz is individual; i.e., no team work of any kind is permitted.
+Each quiz is given varying weighting, for a total of 20 marks.
+The marks for quizzes are capped such that a student technically only must 
+complete seven of the eight quizzes to get full marks for the quiz component
+(although completing all quizzes will enable students to regain marks
+they lost previously).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc29ad6c" class="outline-3">
+<h3 id="orgc29ad6c"><span class="section-number-3">8.5</span> Final Examination</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+The final exam is a two hour written exam. Requests for a supplementary
+exam will only be considered where students (a) have completed all other
+course components to a satisfactory standard, (b) have been absent from the
+final exam, (c) and have submitted a fully documented request for special
+consideration to student lifecycle within three working days of the final exam.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1dc19e6" class="outline-3">
+<h3 id="org1dc19e6"><span class="section-number-3">8.6</span> Examination Hurdle</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+To achieve a passing final mark, a student needs to pass the exam. To pass
+the exam, a student needs to achieve 40% of overall marks awarded in the
+exam. Any student who fails the exam will automatically fail the entire
+course. No re-assessment will be awarded in this case.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a1cb17" class="outline-2">
+<h2 id="org4a1cb17"><span class="section-number-2">9</span> Student Conduct</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+The <b>Student Code of Conduct</b> <a href="https://student.unsw.edu.au/conduct">Information</a>, <a href="https://www.gs.unsw.edu.au/policy/documents/studentcodepolicy.pdf">Policy</a>) sets out what the University expects from students as members of the UNSW community. As well as the learning, teaching and research environment, the University aims to provide an environment that enables students to achieve their full potential and to provide an experience consistent with the University's values and guiding principles. A condition of enrolment is that students <b>inform themselves</b> of the University's rules and policies affecting them, and conduct themselves accordingly.
+</p>
+
+<p>
+In particular, students have the responsibility to observe standards of equity and respect in dealing with every member of the University community. This applies to all activities on UNSW premises and all external activities related to study and research. This includes behaviour in person as well as behaviour on social media, for example Facebook groups set up for the purpose of discussing UNSW courses or course work. Behaviour that is considered in breach of the Student Code Policy as discriminatory, sexually inappropriate, bullying, harassing, invading another's privacy or causing any person to fear for their personal safety is serious misconduct and can lead to severe penalties, including suspension or exclusion from UNSW.
+</p>
+
+<p>
+If you have any concerns, you may raise them with your lecturer, or approach the <a href="mailto:ethics-officer@cse.unsw.edu.au">School Ethics Officer</a>, <a href="mailto:grievance-officer@cse.unsw.edu.au">Grievance Officer</a>, or one of the student representatives.
+</p>
+
+<p>
+<b>Plagiarism</b> is <a href="https://student.unsw.edu.au/plagiarism">defined as</a> using the words or ideas of others and presenting them as your own. UNSW and CSE treat plagiarism as academic misconduct, which means that it carries penalties as severe as being excluded from further study at UNSW. There are several on-line sources to help you understand what plagiarism is and how it is dealt with at UNSW:
+</p>
+
+
+<ul class="org-ul">
+<li><a href="https://student.unsw.edu.au/plagiarism">Plagiarism and Academic Integrity</a></li>
+<li><a href="https://www.gs.unsw.edu.au/policy/documents/plagiarismprocedure.pdf">UNSW Plagiarism Procedure</a></li>
+</ul>
+
+<p>
+Make sure that you read and understand these. Ignorance is not accepted as an excuse for plagiarism. In particular, you are also responsible that your assignment files are not accessible by anyone but you by setting the correct permissions in your CSE directory and code repository, if using. Note also that plagiarism includes paying or asking another person to do a piece of work for you and then submitting it as your own work.
+</p>
+
+<p>
+UNSW has an ongoing commitment to fostering a culture of learning informed by 
+  academic integrity. All UNSW staff and students have a responsibility to adhere 
+  to this principle of academic integrity. Plagiarism undermines academic 
+  integrity and is not tolerated at UNSW. Plagiarism at UNSW is defined as using
+  the words or ideas of others and passing them off as your own.
+</p>
+
+<p>
+If you haven't done so yet, please take the time to read the full text of
+</p>
+
+
+<ul class="org-ul">
+<li><a href="https://student.unsw.edu.au/plagiarism">UNSW's policy regarding academic honesty and plagiarism</a></li>
+</ul>
+
+
+<p>
+The pages below describe the policies and procedures in more detail:
+</p>
+
+
+<ul class="org-ul">
+<li><a href="https://www.gs.unsw.edu.au/policy/documents/studentcodepolicy.pdf">Student Code Policy</a></li>
+<li><a href="https://www.gs.unsw.edu.au/policy/documents/studentmisconductprocedures.pdf">Student Misconduct Procedure</a></li>
+<li><a href="https://www.gs.unsw.edu.au/policy/documents/plagiarismpolicy.pdf">Plagiarism Policy Statement</a></li>
+<li><a href="https://www.gs.unsw.edu.au/policy/documents/plagiarismprocedure.pdf">Plagiarism Procedure</a></li>
+</ul>
+
+<p>
+You should also read the following page which describes your rights and responsibilities in the CSE context:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.engineering.unsw.edu.au/computer-science-engineering/about-us/organisational-structure/student-services/policies/essential-advice-for-cse-students">Essential Advice for CSE Students</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7b331f3" class="outline-2">
+<h2 id="org7b331f3"><span class="section-number-2">10</span> Course Schedule</h2>
+</div>
+
+<div id="outline-container-org1487d88" class="outline-2">
+<h2 id="org1487d88"><span class="section-number-2">11</span> Resources for Students</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+There is no textbook for the course. As tutorial and reference for Haskell,
+you can use any of these books:
+</p>
+
+<ul class="org-ul">
+<li>Thinking Functionally with Haskell, by Richard Bird, Cambridge University
+Press.</li>
+<li>Haskell Programming From First Principles by Christopher Allen and Julie
+Moronuki, Gumroad.</li>
+<li>Programming in Haskell, 2nd Edition by Graham Hutton, Cambridge
+University Press.</li>
+<li>Real World Haskell by Bryan O'Sullivan, Don Stewart, and John Goerzen,
+O'Reilly Media.</li>
+<li>Learn You a Haskell for Great Good! by Miran Lipovača, No Starch Press.</li>
+</ul>
+
+<p>
+The last two books in this list are available as online ebooks for free.
+</p>
+
+<p>
+Further reading material will be announced in the lecture and/or on the
+course web page. 
+</p>
+
+<p>
+In addition, the <a href="http://learn.hfm.io/">Learning Haskell</a> tutorial is 
+written by former lecturers of this course and covers the basics of Haskell
+programming necessary to get started in COMP3141. 
+</p>
+</div>
+
+<div id="outline-container-org82638bd" class="outline-3">
+<h3 id="org82638bd"><span class="section-number-3">11.1</span> Getting Help</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Questions regarding the course material, assignments, exercises, and general
+administrative questions should be asked on the course forum (accessible from
+the course web page), where answers benefit the whole class. Alternatively,
+approach the lecturer after class. To discuss matters concerning your
+personal performance, please send an email to the course account
+<code>cs3141@cse.unsw.edu.au</code>. For identification purposes, if you wish to send
+email concerning the course, you must send the mail from your CSE or UNSW
+student account (not from GMail, Yahoo, Bigpond or similar), and include your
+student id and your full name.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org93cce85" class="outline-2">
+<h2 id="org93cce85"><span class="section-number-2">12</span> Course Evaluation and Development</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+This course is being continuously improved and we will conduct a survey at the end of session to obtain feedback on the quality of the various course components. Your participation in the survey will be greatly appreciated.
+</p>
+
+<p>
+Student feedback over the last years has generally been positive with
+a high student satisfaction rate.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

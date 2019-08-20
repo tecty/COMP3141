@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz (Week 7)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../index.html">Announcements</a></li>
+<li><a href="../outline.html">Course Outline</a></li>
+<li><a href="../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 1/code.html">Code </a></li>
+<li><a href="../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 2/code.html">Code </a></li>
+<li><a href="../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Quiz (Week 7)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcf6fc2c">1. Effects and Purity</a>
+<ul>
+<li><a href="#orge0424cc">1.1. Question 1</a></li>
+<li><a href="#org113c76f">1.2. Question 2</a></li>
+<li><a href="#orga449de7">1.3. Question 3</a></li>
+<li><a href="#org636d1b3">1.4. Question 4</a></li>
+</ul>
+</li>
+<li><a href="#orgecbccd0">2. IO and State</a>
+<ul>
+<li><a href="#orgb2b7743">2.1. Question 5</a></li>
+<li><a href="#org99f3678">2.2. Question 6</a></li>
+<li><a href="#orgf638d86">2.3. Question 7</a></li>
+<li><a href="#orgffef954">2.4. Question 8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcf6fc2c" class="outline-2">
+<h2 id="orgcf6fc2c"><span class="section-number-2">1</span> Effects and Purity</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orge0424cc" class="outline-3">
+<h3 id="orge0424cc"><span class="section-number-3">1.1</span> Question 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Which of the following C functions would be considered <i>pure</i>?
+</p>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code>sqrt()</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code>printf()</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code>rand()</code></li>
+<li><span class='mark mark_correct'>✔</span><code>strcmp()</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Computing a square root is pure, as the result depends solely
+on the input to the function. Indeed, the square root is a
+function in the mathematical sense and therefore is, by definition,
+pure.
+</p>
+
+<p>
+The <code>printf()</code> function is not pure as it performs I/O, a type of effect.
+</p>
+
+<p>
+The <code>rand()</code> function is not pure as each time it is evaluated it can
+return different results. That is, the results are not dependent <i>solely</i>
+on the input arguments.
+</p>
+
+<p>
+The <code>strcmp()</code> function is pure as it returns a comparison result based
+solely on the two input strings, and it doesn't change those strings
+or any other data in any way. Thus it can be expressed as a mapping
+from inputs (two strings) to outputs (booleans).
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org113c76f" class="outline-3">
+<h3 id="org113c76f"><span class="section-number-3">1.2</span> Question 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Imagine we had a function <code>adder</code> that added on to a running total each time
+it was called:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-variable-name">*&gt;</span> adder 7
+7
+<span class="org-variable-name">*&gt;</span> adder 10
+17
+<span class="org-variable-name">*&gt;</span> adder 0
+17
+<span class="org-variable-name">*&gt;</span> adder 7
+24
+</pre>
+</div>
+
+<p>
+Why is <code>adder</code> impure?
+</p>
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span>It performs I/O</li>
+<li><span class='mark mark_incorrect'>✗</span>It manipulates memory</li>
+<li><span class='mark mark_correct'>✔</span>It does not depend solely on its arguments</li>
+<li><span class='mark mark_incorrect'>✗</span>It doesn't indicate effects in its type</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The <code>adder</code> function does not perform I/O, it <i>does</i> manipulate memory (but so do
+pure functions), and its type is neither here nor there. The thing that makes it
+impure is that the expression <code>adder x</code> does not always mean the same thing for a
+given <code>x</code>. That is, it depends on some internal state <i>in addition to</i> its argument.
+Thus option 3 is the correct answer. 
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-orga449de7" class="outline-3">
+<h3 id="orga449de7"><span class="section-number-3">1.3</span> Question 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Which of the following effects is considered an <i>internal</i> effect?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span>Modifying global variables</li>
+<li><span class='mark mark_incorrect'>✗</span>Drawing on the screen</li>
+<li><span class='mark mark_correct'>✔</span>Modifying local variables</li>
+<li><span class='mark mark_correct'>✔</span>Allocating a data structure</li>
+<li><span class='mark mark_incorrect'>✗</span>Throwing an exception</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Modifying global variables can have a non-local influence on other parts of the program,
+therefore is not internal. Drawing on the screen similarly is not internal as its effect
+can clearly be observed from outside the function. Modifying local variables is internal
+as no other part of the program can observe the modification (neither can the user). 
+Allocating data structures is also considered internal (under the common abstraction 
+that we have infinite memory) as such an allocation also cannot be observed externally.
+Throwing an exception can be observed externally, however (by catching it), and thus is
+not an internal effect.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org636d1b3" class="outline-3">
+<h3 id="org636d1b3"><span class="section-number-3">1.4</span> Question 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+What does the type <code>IO Int</code> signify?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span>An embedded program that may perform side effects before returning an <code>Int</code></li>
+<li><span class='mark mark_incorrect'>✗</span>A function from the abstract state of the <code>RealWorld</code> to a pair of the <code>RealWorld</code> state and an <code>Int</code>.</li>
+<li><span class='mark mark_incorrect'>✗</span>An effectful computation that produces an <code>Int</code>.</li>
+<li><span class='mark mark_correct'>✔</span>All of the above views are valid interpretations</li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+GHC internally models <code>IO a</code> as being the same as a type:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-type">IO</span> a <span class="org-variable-name">=~</span> <span class="org-type">RealWorld</span> <span class="org-variable-name">-&gt;</span> (<span class="org-type">RealWorld</span>, a)
+</pre>
+</div>
+<p>
+This is a common view of <code>IO</code> and option 2, but perhaps a more common view of <code>IO</code> is that
+it denotes <i>embedded programs</i>. For example, 
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">getChar</span> <span class="org-variable-name">::</span> <span class="org-type">IO</span> <span class="org-type">Char</span>
+</pre>
+</div>
+<p>
+Could be viewed as a type representing an (effectful) <i>program</i> that will <i>produce</i> a <code>Char</code>
+when executed. This helps us to view <code>IO</code> as a type just like any other, and one that 
+we can pass into and return from functions just like <code>Maybe Int</code> or <code>[Int]</code>.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgecbccd0" class="outline-2">
+<h2 id="orgecbccd0"><span class="section-number-2">2</span> IO and State</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgb2b7743" class="outline-3">
+<h3 id="orgb2b7743"><span class="section-number-3">2.1</span> Question 5</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Imagine we had the following <code>IO</code> based API for manipulating a robot:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Direction</span> <span class="org-variable-name">=</span> <span class="org-type">L</span> <span class="org-variable-name">|</span> <span class="org-type">R</span>
+<span class="org-function-name">forward</span>    <span class="org-variable-name">::</span> <span class="org-type">IO</span> <span class="org-type">()</span>
+<span class="org-function-name">obstructed</span> <span class="org-variable-name">::</span> <span class="org-type">IO</span> <span class="org-type">Bool</span>
+<span class="org-function-name">turn</span>       <span class="org-variable-name">::</span> <span class="org-type">Direction</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">IO</span> <span class="org-type">()</span>
+</pre>
+</div>
+<p>
+We wish to write a program that will move <code>forward</code> unless <code>obstructed</code>, in which case
+the robot should <code>turn</code> towards the <code>L</code> direction.
+</p>
+
+<p>
+Which of the following is a type-correct implementation of the above procedure?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">robot</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span>
+  sensed <span class="org-variable-name">&lt;-</span> obstructed
+  <span class="org-keyword">if</span> sensed 
+    <span class="org-keyword">then</span> turn <span class="org-type">L</span>
+    <span class="org-keyword">else</span> forward
+  robot
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">robot</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span>
+  <span class="org-keyword">if</span> obstructed
+    <span class="org-keyword">then</span> turn <span class="org-type">L</span>
+    <span class="org-keyword">else</span> forward
+  robot
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">robot</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span>
+  <span class="org-keyword">let</span> sensed <span class="org-variable-name">=</span> obstructed
+  <span class="org-keyword">if</span> sensed
+    <span class="org-keyword">then</span> turn <span class="org-type">L</span>
+    <span class="org-keyword">else</span> forward
+  robot
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">robot</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span>
+  sensed <span class="org-variable-name">&lt;-</span> obstructed
+  <span class="org-keyword">if</span> sensed
+    <span class="org-keyword">then</span> turn <span class="org-type">L</span>
+         robot
+    <span class="org-keyword">else</span> forward
+         robot
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Option 1 is correct. Option 2 uses an <code>IO Bool</code> (<code>obstructed</code>) where a <code>Bool</code> is required (in the <code>if</code>).
+Option 3 uses <code>let</code> to bind <code>sensed</code> to <code>obstructed</code>. That is, <code>sensed</code> now has type <code>IO Bool</code>, which
+once again is incorrectly used within the <code>if</code>. Option 4 places the <code>robot</code> looping call at the same indentation
+as <code>turn L</code> and <code>forward</code>, but without the <code>do</code> keyword they do not form a block and so Haskell would
+parse this as <code>turn L robot</code> which is not well-typed.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org99f3678" class="outline-3">
+<h3 id="org99f3678"><span class="section-number-3">2.2</span> Question 6</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Check all of the following programs that are equivalent to the <code>IO</code> action <code>a</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span> x <span class="org-variable-name">&lt;-</span> getLine
+       putStrLn (filter isDigit x)
+       a 
+</pre>
+</div>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> getLine <span class="org-variable-name">&gt;&gt;=</span> putStrLn <span class="org-variable-name">.</span> filter isDigit <span class="org-variable-name">&gt;&gt;</span> a</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> getLine <span class="org-variable-name">&gt;&gt;=</span> <span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> putStrLn (filter isDigit x) <span class="org-variable-name">&gt;&gt;=</span> <span class="org-variable-name">\</span><span class="org-keyword">_</span> <span class="org-variable-name">-&gt;</span> a</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> (getLine <span class="org-variable-name">&gt;&gt;=</span> <span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> putStrLn (filter isDigit x)) <span class="org-variable-name">&gt;&gt;=</span> a</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span> getLine <span class="org-variable-name">&gt;&gt;=</span> <span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> putStrLn <span class="org-variable-name">.</span> filter isDigit; a</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span> x <span class="org-variable-name">&lt;-</span> getLine; putStrLn <span class="org-variable-name">.</span> filter isDigit; a</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span> x <span class="org-variable-name">&lt;-</span> getLine; putStrLn <span class="org-variable-name">.</span> filter isDigit <span class="org-variable-name">$</span> x; a</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">a</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span> getLine <span class="org-variable-name">&gt;&gt;=</span> <span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> putStrLn (filter isDigit x); a</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Options 3,4, and 5 don't type-check. The others are all equivalent.
+</p>
+
+</div>
+
+</div>
+</div>
+<div id="outline-container-orgf638d86" class="outline-3">
+<h3 id="orgf638d86"><span class="section-number-3">2.3</span> Question 7</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Below is an example of a small program using <code>State String</code>. As a refresher, here's the basic API for <code>State</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">get</span> <span class="org-variable-name">::</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">String</span>
+<span class="org-function-name">put</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span>
+<span class="org-function-name">runState</span> <span class="org-variable-name">::</span> <span class="org-type">State</span> <span class="org-type">String</span> a <span class="org-variable-name">-&gt;</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> (<span class="org-type">String</span>, a) 
+</pre>
+</div>
+
+<p>
+Now, our program will repeatedly pad a string with spaces until it reaches a certain length:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">leftPad</span> <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span>
+<span class="org-function-name">leftPad</span> l <span class="org-variable-name">=</span> while ((<span class="org-variable-name">&lt;</span> l) <span class="org-variable-name">.</span> length) <span class="org-variable-name">$</span> <span class="org-keyword">do</span>
+              str <span class="org-variable-name">&lt;-</span> get
+              put (<span class="org-string">' '</span><span class="org-type">:</span>str)
+</pre>
+</div>
+
+<p>
+What is the type of <code>while</code> in this example?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span></code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span></code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell">(<span class="org-type">Bool</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span></code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell">(<span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span></code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell">(<span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">State</span> <span class="org-type">String</span> <span class="org-type">()</span></code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The <code>while</code> loop takes a state-dependent conditional, i.e a function that returns a <code>Bool</code> for a given <code>String</code>, and a stateful
+monadic action for the loop body, <code>State String ()</code>, finally producing a stateful monadic action that runs the loop, <code>State String ()</code>, hence option 5
+is correct. 
+</p>
+
+</div>
+
+</div>
+</div>
+<div id="outline-container-orgffef954" class="outline-3">
+<h3 id="orgffef954"><span class="section-number-3">2.4</span> Question 8</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Here is a program to detect if a string has balanced parentheses, ignoring all other characters.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">matching</span> <span class="org-type">[]</span>       n <span class="org-variable-name">=</span> (n <span class="org-variable-name">==</span> 0)
+<span class="org-function-name">matching</span> (<span class="org-string">'('</span><span class="org-type">:</span>xs) n <span class="org-variable-name">=</span> matching xs (n<span class="org-variable-name">+</span>1)
+<span class="org-function-name">matching</span> (<span class="org-string">')'</span><span class="org-type">:</span>xs) n <span class="org-variable-name">=</span> n <span class="org-variable-name">&gt;</span> 0 <span class="org-variable-name">&amp;&amp;</span> matching xs (n<span class="org-variable-name">-</span>1)
+<span class="org-function-name">matching</span> (oth<span class="org-type">:</span>xs) n <span class="org-variable-name">=</span> matching xs n
+</pre>
+</div>
+
+<p>
+Which of the following is an accurate translation of the above program to use the <code>State</code> monad?
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> xs <span class="org-variable-name">=</span> snd (runState (go xs) 0) <span class="org-variable-name">==</span> 0
+  <span class="org-keyword">where</span>
+    go <span class="org-type">[]</span> <span class="org-variable-name">=</span> pure <span class="org-type">True</span>
+    go (x<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">'('</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">+</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">')'</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">-</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> go xs 
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> xs <span class="org-variable-name">=</span> snd (runState (go xs) 0) <span class="org-variable-name">==</span> 0
+  <span class="org-keyword">where</span>
+    go <span class="org-type">[]</span> <span class="org-variable-name">=</span> pure <span class="org-type">True</span>
+    go (x<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">'('</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">+</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">')'</span>  <span class="org-variable-name">=</span> <span class="org-keyword">do</span> n <span class="org-variable-name">&lt;-</span> get
+                               <span class="org-keyword">if</span> n <span class="org-variable-name">&gt;</span> 0 <span class="org-keyword">then</span> put (n <span class="org-variable-name">-</span> 1) <span class="org-variable-name">&gt;&gt;</span> go xs
+                                        <span class="org-keyword">else</span> pure <span class="org-type">False</span>
+              <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> go xs 
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> xs <span class="org-variable-name">=</span> fst (runState (go xs) 0)
+  <span class="org-keyword">where</span>
+    go <span class="org-type">[]</span> <span class="org-variable-name">=</span> pure <span class="org-type">True</span>
+    go (x<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">'('</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">+</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">')'</span>  <span class="org-variable-name">=</span> <span class="org-keyword">do</span> n <span class="org-variable-name">&lt;-</span> get
+                               <span class="org-keyword">if</span> n <span class="org-variable-name">&gt;</span> 0 <span class="org-keyword">then</span> put (n <span class="org-variable-name">-</span> 1) <span class="org-variable-name">&gt;&gt;</span> go xs
+                                        <span class="org-keyword">else</span> pure <span class="org-type">False</span>
+              <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> go xs 
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> xs <span class="org-variable-name">=</span> <span class="org-keyword">let</span> (b,n) <span class="org-variable-name">=</span> runState (go xs) 0
+               <span class="org-keyword">in</span> b <span class="org-variable-name">&amp;&amp;</span> n <span class="org-variable-name">==</span> 0
+  <span class="org-keyword">where</span>
+    go <span class="org-type">[]</span> <span class="org-variable-name">=</span> pure <span class="org-type">True</span>
+    go (x<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">'('</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">+</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">')'</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">-</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> go xs 
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">matching</span> xs <span class="org-variable-name">=</span> fst (runState (go xs) 0)
+  <span class="org-keyword">where</span>
+    go <span class="org-type">[]</span> <span class="org-variable-name">=</span> get <span class="org-variable-name">&gt;&gt;=</span> pure <span class="org-variable-name">.</span> (<span class="org-variable-name">==</span> 0)
+    go (x<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">'('</span>  <span class="org-variable-name">=</span> modify (<span class="org-variable-name">+</span>1) <span class="org-variable-name">&gt;&gt;</span> go xs
+              <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> <span class="org-string">')'</span>  <span class="org-variable-name">=</span> <span class="org-keyword">do</span> n <span class="org-variable-name">&lt;-</span> get
+                               <span class="org-keyword">if</span> n <span class="org-variable-name">&gt;</span> 0 <span class="org-keyword">then</span> put (n <span class="org-variable-name">-</span> 1) <span class="org-variable-name">&gt;&gt;</span> go xs
+                                        <span class="org-keyword">else</span> pure <span class="org-type">False</span>
+              <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> go xs 
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Option 1 checks if the final count is zero, but does not check if the count sinks below zero at any point, matching the strings
+<code>)(</code> for example. Option 2 does check if the count drops below zero, but then doesn't do anything with that information. Option 3
+only checks if the count drops below zero, and not that the count is zero at the end. Option 4 does check both the boolean and 
+the count at the end, however does not set the boolean to false when the count drops below zero. Option 5 does all the required 
+checks and is therefore correct.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class='submission_box'> Submission is already closed for this quiz. You can click <a href='https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/submit_quiz?quizname=quiz07'>here</a> to check your submission (if any). </div></div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

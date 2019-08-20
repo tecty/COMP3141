@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Announcements</title>
+  <atom:link href="https://www.cse.unsw.edu.au/~cs3141/index.xml" rel="self" type="application/rss+xml" />
+  <link>https://www.cse.unsw.edu.au/~cs3141/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 07 Aug 2019 18:15:37 +1000</pubDate>
+  <lastBuildDate>Wed, 07 Aug 2019 18:15:37 +1000</lastBuildDate>
+  <generator>Emacs 26.1 Org-mode 9.1.6-3141</generator>
+  <webMaster>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Announcements</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/</link>
+  </image>
+
+
+  <item>
+    <title>Wrap-up</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#org535a56a</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#org535a56a</guid>
+    <pubDate>Wed, 07 Aug 2019 00:18:00 +1000</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    Thank you all for a wonderful term. I hope you enjoyed COMP3141. As you may already know, the Wednesday lecture this week will be a <i>revision lecture</i>. In addition to going through the sample exam, we will also be around to answer any questions you might have. I hope you've all had a look through the course material and prepared questions for us to answer :)
+    </p>
+
+    <p>
+    Currently, the response rate for myExperience is an abysmal 11%! This means that, even if you have filled out the survey already, most of your friends in the course probably have not. Please fill it out, low response rates are a huge pain for lecturers, and it's hugely important to us that you fill it out. Even if you don't have much to say, just checking the boxes and not writing any comments will take no more than a couple of minutes of your time.
+    </p>
+
+    <p>
+    <a href="https://myexperience.unsw.edu.au">https://myexperience.unsw.edu.au</a>
+    </p>
+
+    <p>
+    In addition to the myExperience survey, I have also made a bunch of Piazza posts asking for more specific feedback about various aspects of the course, to improve it for future years. At any time between now and the exam (more on that in a moment), please let us know your thoughts:
+    </p>
+
+    <p>
+    <a href="https://piazza.com/class/jw3no041p794do?cid=490">https://piazza.com/class/jw3no041p794do?cid=490</a>
+    </p>
+
+    <p>
+    Lastly, the exam will be on 26th of August 2019 at 8:45am in the Royal Ballroom of Randwick Racecourse. You have 2 hours, plus ten minutes reading time, and can bring two single-sided sheets of handwritten notes, just as with the sample exam. Normally, I would show up to the Racecourse to taunt/inspire you before the exam, but I won't be able to make it this time - Sorry! Christine and I will be available on Piazza up to the exam date, so please ask us questions as you revise.
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Guest Lecture</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#orga51be2d</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#orga51be2d</guid>
+    <pubDate>Mon, 05 Aug 2019 02:38:00 +1000</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    The Tuesday lecture this week will be a guest lecture from Hira Taqdees Syeda, a proof 
+    engineer with the 
+    Trustworthy Systems group at Data61. Hira will discuss the approaches used towards 
+    verification of real-world systems, why that verification is important, and the specific 
+    verification projects currently underway at Data61. 
+    </p>
+
+    <p>
+    Her perspective is highly relevant to 
+    this course, as the techniques used in such verifications are not very different from 
+    concepts we have covered. I would highly encourage all students who are able to attend.
+    </p>
+    ]]></description>
+  </item>
+
+
+  <item>
+    <title>Assignment 2 Released</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#org8e59a17</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#org8e59a17</guid>
+    <pubDate>Sat, 20 Jul 2019 01:23:00 +1000</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    Assignment 2 is released, due just before the wednesday lecture in week 10. This gives you 
+    a bit over 2 weeks to complete it.
+    </p>
+
+    <p>
+    It involves Week 8 lecture content, but I figured there is no harm in releasing it early.
+    </p>
+
+    <p>
+    Also, after student requests, I've uploaded the sample exam as well as solutions. You can find it 
+    on the sidebar.
+    </p>
+
+    <p>
+    Finally, the week 8 exercise (due in week 9) is the last one. There was some confusion because the 
+    course outline was inconsistent as to how many exercises there are. I think it is a bit unfair to 
+    have too much due in week 10, so we will have no exercise set in week 9 or 10. The week 9 quiz will 
+    be the last quiz, and due at the end of week 10. 
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Assignment 1 Released</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#org66eda6d</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#org66eda6d</guid>
+    <pubDate>Mon, 24 Jun 2019 03:52:00 +1000</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    Assignment 1 is released, and is due right before the wednesday lecture in week 6. Doing the math,
+    this gives you just over 2 weeks to complete it.
+    </p>
+
+    <p>
+    Also, as mentioned in the course schedule, there will be <b>no lectures in week 5</b>, to give you time to work 
+    on the assignment and other deliverables.
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Lecture Recordings</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#orgb35b7f1</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#orgb35b7f1</guid>
+    <pubDate>Mon, 03 Jun 2019 18:28:00 +1000</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    The link to lecture recordings on Moodle is now in the sidebar. Please click the link on the Moodle page to get 
+    to the echo360 recordings. 
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Tutorials in COMP3141</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#org4389e3d</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#org4389e3d</guid>
+    <pubDate>Sat, 06 Apr 2019 19:10:00 +1100</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    Some students have asked me what the story is with the many tutorials 
+    initially scheduled on the UNSW timetable for COMP3141.
+    </p>
+
+    <p>
+    This was the result of a scheduling error. <b>There are no tutorials for COMP3141</b>, just as with previous years.
+    </p>
+
+    <p>
+    I will try to get these tutorial slots removed entirely, but otherwise 
+    the slots will just be closed so that you don't need to enrol in one in order to enrol in the course.
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>What is COMP3141?</title>
+    <link>https://www.cse.unsw.edu.au/~cs3141/index.html#org7e96184</link>
+    <author>liamoc@Liams-MacBook-Pro-2.local (Liam O'Connor)</author>
+    <guid isPermaLink="false">https://www.cse.unsw.edu.au/~cs3141/index.html#org7e96184</guid>
+    <pubDate>Wed, 20 Mar 2019 14:06:00 +1100</pubDate>
+
+    <description><![CDATA[<p>
+    <i>Liam O'Connor</i> 
+    </p>
+
+    <p>
+    COMP3141 has a very vague course title, so many of you may be curious as to what this course is actually about,
+    and what it involves.
+    Sometimes this course is erroneously called a "Haskell course". In reality, it is a <i>software engineering</i> course
+    that happens to use Haskell.
+    </p>
+
+    <p>
+    By <i>software engineering</i> I do not mean the mixture of project management techniques and object-oriented programming
+    and modelling taught to you in, for example, most of the software engineering workshops or COMP1531. Rather, I mean
+    <i>rigorous software engineering</i> using mathematical principles. 
+    </p>
+
+    <p>
+    Some of you may have learnt about formal verification or formal methods from courses such as 
+    COMP2111, SENG2011, or COMP4161. While this is an admirable pursuit, this course is not about formal verification
+    either. Rather, we investigate the use of <i>mathematically structured programming</i> to deliver software that is more 
+    reliable, more verifiable, and more elegant. 
+    </p>
+
+    <p>
+    Central to the notion of mathematically structured programming is the art of <i>specification</i>. Writing formal specifications
+    and understanding their limitations is a central theme of this course. In the course, we will learn how to translate
+    these specifications into meaningful artefacts that relate to a Haskell implementation, such as logical property-based tests, 
+    type-system enforced invariants, or proofs via equational reasoning. We will investigate design patterns based on 
+    mathematical ideas, and ways of thinking compositionally to produce working software in a bottom-up fashion.
+    </p>
+
+    <p>
+    Workload wise, this course is not a light-weight course, despite the absence of tutorials. There are weekly multiple-choice
+    quizzes (the difficulty of which is no joke: you will not be able to merely copy the answers from the lecture slides), and 
+    weekly programming exercises. In addition, we have two substantial programming assignments.
+    </p>
+    ]]></description>
+  </item>
+</channel>
+</rss>

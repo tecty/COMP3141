@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz (Week 3)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../index.html">Announcements</a></li>
+<li><a href="../outline.html">Course Outline</a></li>
+<li><a href="../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 1/code.html">Code </a></li>
+<li><a href="../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 2/code.html">Code </a></li>
+<li><a href="../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Quiz (Week 3)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5a05558">1. Properties for Functions</a>
+<ul>
+<li><a href="#org08f99cf">1.1. Question 1</a></li>
+<li><a href="#org9087bba">1.2. Question 2</a></li>
+<li><a href="#org0a214c0">1.3. Question 3</a></li>
+<li><a href="#orga789b64">1.4. Question 4</a></li>
+</ul>
+</li>
+<li><a href="#org03e809b">2. Functions for Properties</a>
+<ul>
+<li><a href="#orgace73f4">2.1. Question 5</a></li>
+<li><a href="#orgc52ab6f">2.2. Question 6</a></li>
+<li><a href="#org14da058">2.3. Question 7</a></li>
+<li><a href="#org963f209">2.4. Question 8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5a05558" class="outline-2">
+<h2 id="org5a05558"><span class="section-number-2">1</span> Properties for Functions</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org08f99cf" class="outline-3">
+<h3 id="org08f99cf"><span class="section-number-3">1.1</span> Question 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The <a href="https://en.wikipedia.org/wiki/ROT13">ROT13 Cipher</a> is a simple substitution cipher which rotates the alphabet by thirteen places,
+that is, <code>A</code> becomes <code>N</code> and <code>Z</code> becomes <code>M</code>.  Here is a simple (rather inefficient) 
+Haskell implementation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">rot13</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">String</span>
+<span class="org-function-name">rot13</span> <span class="org-variable-name">=</span> map <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>x <span class="org-variable-name">-&gt;</span> 
+          <span class="org-keyword">case</span> lookup x table <span class="org-keyword">of</span>
+            <span class="org-type">Just</span> y  <span class="org-variable-name">-&gt;</span> y 
+            <span class="org-type">Nothing</span> <span class="org-variable-name">-&gt;</span> x
+  <span class="org-keyword">where</span>
+    table <span class="org-variable-name">=</span> table' <span class="org-string">'A'</span> <span class="org-string">'Z'</span> <span class="org-variable-name">++</span> table' <span class="org-string">'a'</span> <span class="org-string">'z'</span>
+    table' a z <span class="org-variable-name">=</span> zip [a<span class="org-variable-name">..</span>z] (drop 13 (cycle [a<span class="org-variable-name">..</span>z]))
+</pre>
+</div>
+
+<p>
+Select all the properties that this function satisfies (assuming ASCII strings).
+</p>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">length</span> x <span class="org-variable-name">==</span> length (rot13 x)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">rot13</span> (map toUpper x) <span class="org-variable-name">==</span> map toUpper (rot13 x)</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">rot13</span> (map f x) <span class="org-variable-name">==</span> map f (rot13 x)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">all</span> (not <span class="org-variable-name">.</span> isAlpha) x <span class="org-variable-name">==&gt;</span> rot13 x <span class="org-variable-name">==</span> x</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">rot13</span> (a <span class="org-variable-name">++</span> b) <span class="org-variable-name">==</span> rot13 a <span class="org-variable-name">++</span> rot13 b</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">not</span> (null x) <span class="org-variable-name">==&gt;</span> ord (head x) <span class="org-variable-name">+</span> 13 <span class="org-variable-name">==</span> ord (head (rot13 x)) </code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">rot13</span> (rot13 x) <span class="org-variable-name">==</span> x</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Famously, the ROT13 cipher is an <i>involution</i>, that is, it is its own inverse. 
+This makes property 7 true. 
+</p>
+
+<p>
+Property 6 is false, as the difference in ASCII
+codes can be very different from 13, for example, the space character is
+left unaltered by ROT13 and so the difference may be zero. 
+</p>
+
+<p>
+Property 5 is true, as concatenating two ciphered strings is the same
+as ciphering their concatenation. 
+</p>
+
+<p>
+Property 4 is true, as rot13 does
+not affect any characters except alphabetical ones.
+</p>
+
+<p>
+Property 3 does
+not hold, for example when <code>f</code> is the <code>succ</code> function.
+</p>
+
+<p>
+Property 2 holds
+as case is preserved across ciphering (capital letters are changed to
+other capital letters, and lowercase letters are changed to other lowercase
+letters). 
+</p>
+
+<p>
+Property 1 is also true, as the ciphertext is always the same
+length as the plaintext in a substitution cipher.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org9087bba" class="outline-3">
+<h3 id="org9087bba"><span class="section-number-3">1.2</span> Question 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Here is a function that fairly merges ordered lists, e.g. 
+<code class="src src-haskell"><span class="org-function-name">merge</span> [2,4,6,7] [1,2,3,4] <span class="org-variable-name">==</span> [1,2,2,3,4,4,6,7]</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">merge</span> <span class="org-variable-name">::</span> (<span class="org-type">Ord</span> a) <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a]
+<span class="org-function-name">merge</span> (x<span class="org-type">:</span>xs) (y<span class="org-type">:</span>ys) <span class="org-variable-name">|</span> x <span class="org-variable-name">&lt;</span> y     <span class="org-variable-name">=</span> x<span class="org-type">:</span>merge xs (y<span class="org-type">:</span>ys)
+                    <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> y<span class="org-type">:</span>merge (x<span class="org-type">:</span>xs) ys
+<span class="org-function-name">merge</span> xs <span class="org-type">[]</span> <span class="org-variable-name">=</span> xs
+<span class="org-function-name">merge</span> <span class="org-type">[]</span> ys <span class="org-variable-name">=</span> ys
+</pre>
+</div>
+
+<p>
+Select all the properties that this function satisfies.
+</p>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">merge</span> (sort a) (sort b) <span class="org-variable-name">==</span> sort (merge a b)</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">merge</span> a b <span class="org-variable-name">==</span> sort (a <span class="org-variable-name">++</span> b)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">length</span> (merge a b) <span class="org-variable-name">==</span> length a <span class="org-variable-name">+</span> length b</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">merge</span> (filter f a) (filter f b) <span class="org-variable-name">==</span> filter f (merge a b)</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">merge</span> (map f a) (map f b) <span class="org-variable-name">==</span> map f (merge a b)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">sort</span> (merge a b) <span class="org-variable-name">==</span> sort (a <span class="org-variable-name">++</span> b)</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Property 1 is true, as given two sorted lists (<code>sort a</code> and <code>sort b</code>), <code>merge</code> 
+should produce a sorted list containing all of the elements of the original lists. 
+Even if the input lists are not sorted, all elements will still be contained
+in the output, so <code>sort</code>-ing <code>merge a b</code> will produce the same result.
+</p>
+
+<p>
+Property 2 is false, for example when <code>a</code> is <code class="src src-haskell">[3,1]</code> and
+<code>b</code> is <code class="src src-haskell">[2,3]</code>.
+</p>
+
+<p>
+Property 3 is true, as the <code>merge</code> always contains all elements from the input list.
+</p>
+
+<p>
+Property 4 is false, for example when <code>a</code> is <code class="src src-haskell">[3,1]</code> and
+<code>b</code> is <code class="src src-haskell">[2,3]</code>, and <code>f</code> is <code class="src src-haskell">(<span class="org-variable-name">/=</span> 3)</code>.
+The two filtered lists are <code class="src src-haskell">[1]</code> and <code class="src src-haskell">[2]</code>,
+resulting in a merge of <code class="src src-haskell">[1,2]</code> whereas merging first would result
+in the list <code class="src src-haskell">[2,1]</code>.
+</p>
+
+<p>
+Property 5 is false, for example if <code>f</code> is the absolute value function <code>abs</code>, then 
+any lists involving both negative and positive numbers will result in different orderings.
+</p>
+
+<p>
+Property 6 is true, as a merge contains all the elements of both lists, as does a concatenation,
+and <code>sort</code> canonicalises their order.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org0a214c0" class="outline-3">
+<h3 id="org0a214c0"><span class="section-number-3">1.3</span> Question 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+The following code converts Haskell <code>Int</code> values to and from strings
+containing their binary representation (as a sequences of <code class="src src-haskell">'1'</code>
+and <code class="src src-haskell">'0'</code> characters). 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">toBinary</span> <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">String</span>
+<span class="org-function-name">toBinary</span> 0 <span class="org-variable-name">=</span> <span class="org-string">""</span>
+<span class="org-function-name">toBinary</span> n <span class="org-variable-name">=</span> <span class="org-keyword">let</span> (d,r) <span class="org-variable-name">=</span> n <span class="org-variable-name">`divMod`</span> 2
+              <span class="org-keyword">in</span> toBinary d 
+                   <span class="org-variable-name">++</span> <span class="org-keyword">if</span> r <span class="org-variable-name">==</span> 0 <span class="org-keyword">then</span> <span class="org-string">"0"</span>
+                                <span class="org-keyword">else</span> <span class="org-string">"1"</span>
+
+<span class="org-function-name">fromBinary</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>
+<span class="org-function-name">fromBinary</span> <span class="org-variable-name">=</span> fst <span class="org-variable-name">.</span> foldr eachChar (0,1)
+  <span class="org-keyword">where</span>
+    eachChar <span class="org-string">'1'</span> (sum, m) <span class="org-variable-name">=</span> (sum <span class="org-variable-name">+</span> m, m<span class="org-variable-name">*</span>2)
+    eachChar <span class="org-keyword">_</span>   (sum, m) <span class="org-variable-name">=</span> (sum    , m<span class="org-variable-name">*</span>2)
+</pre>
+</div>
+
+<p>
+Select all properties that these functions satisfy.
+</p>
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell">i <span class="org-function-name">&gt;=</span> 0 <span class="org-variable-name">==&gt;</span> fromBinary (toBinary i) <span class="org-variable-name">==</span> i</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">all</span> (<span class="org-variable-name">`elem`</span> <span class="org-string">"01"</span>) s <span class="org-variable-name">==&gt;</span> toBinary (fromBinary s) <span class="org-variable-name">==</span> s</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">all</span> (<span class="org-variable-name">`elem`</span> <span class="org-string">"01"</span>) s <span class="org-variable-name">==&gt;</span> read s <span class="org-variable-name">&gt;=</span> fromBinary s </code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell">i <span class="org-function-name">&gt;</span> 0 <span class="org-variable-name">==&gt;</span> length (toBinary i) <span class="org-variable-name">&gt;=</span> length (show i) </code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">all</span> (<span class="org-variable-name">`elem`</span> <span class="org-string">"01"</span>) s <span class="org-variable-name">==&gt;</span> fromBinary s <span class="org-variable-name">==</span> fromBinary (<span class="org-string">'0'</span><span class="org-type">:</span>s) </code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+Property 1 is true as converting to a binary string and then back should result
+in the same number.
+</p>
+
+<p>
+Property 2 is false as while <code>toBinary</code> is injective (there is a unique string
+for every number), <code>fromBinary</code> is not, even
+if the strings are restricted to binary digits. For example, adding any number 
+of leading zeroes onto the binary string will result in the same number from
+<code>fromBinary</code>,  so a counterexample to this property can easily be found with
+<code class="src src-haskell"><span class="org-function-name">s</span> <span class="org-variable-name">=</span> <span class="org-string">"01"</span></code>.
+</p>
+
+<p>
+Property 3 is false as <code>read</code> will throw an exception when given the empty list
+for <code>s</code>.
+</p>
+
+<p>
+Property 4 is true, as for <i>positive</i> (i.e. nonzero) integers the <code>toBinary</code> representation
+will always be longer than the decimal string representation.
+</p>
+
+<p>
+Property 5 is true, as adding leading zeroes to a binary number does not change
+its value.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-orga789b64" class="outline-3">
+<h3 id="orga789b64"><span class="section-number-3">1.4</span> Question 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+The following function removes adjacent duplicates from a list.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">dedup</span> <span class="org-variable-name">::</span> (<span class="org-type">Eq</span> a) <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> [a]
+<span class="org-function-name">dedup</span> (x<span class="org-type">:</span>y<span class="org-type">:</span>xs) <span class="org-variable-name">|</span> x <span class="org-variable-name">==</span> y <span class="org-variable-name">=</span> dedup (y<span class="org-type">:</span>xs)
+               <span class="org-variable-name">|</span> otherwise <span class="org-variable-name">=</span> x <span class="org-type">:</span> dedup (y<span class="org-type">:</span>xs)
+<span class="org-function-name">dedup</span> xs <span class="org-variable-name">=</span> xs
+</pre>
+</div>
+
+<p>
+Assume the presence of the following <code>sorted</code> predicate:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">sorted</span> <span class="org-variable-name">::</span> (<span class="org-type">Ord</span> a) <span class="org-variable-name">=&gt;</span> [a] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">sorted</span> (x<span class="org-type">:</span>y<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> x <span class="org-variable-name">&lt;=</span> y <span class="org-variable-name">&amp;&amp;</span> sorted (y<span class="org-type">:</span>xs)
+<span class="org-function-name">sorted</span> xs <span class="org-variable-name">=</span> <span class="org-type">True</span>
+</pre>
+</div>
+
+<p>
+Select all properties that <code>dedup</code> satisfies.
+</p>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">sorted</span> xs <span class="org-variable-name">==&gt;</span> sorted (dedup xs)</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">sorted</span> xs <span class="org-variable-name">==&gt;</span> dedup xs <span class="org-variable-name">==</span> nub xs</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell"><span class="org-function-name">sorted</span> xs <span class="org-variable-name">==&gt;</span> dedup (dedup xs) <span class="org-variable-name">==</span> dedup xs</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">sorted</span> xs <span class="org-variable-name">&amp;&amp;</span> sorted ys <span class="org-variable-name">==&gt;</span> dedup xs <span class="org-variable-name">++</span> dedup ys <span class="org-variable-name">==</span> dedup (xs <span class="org-variable-name">++</span> ys)</code></li>
+<li><span class='mark mark_incorrect'>✗</span><code class="src src-haskell"><span class="org-function-name">sorted</span> xs <span class="org-variable-name">==&gt;</span> length (dedup xs) <span class="org-variable-name">&lt;</span> length xs</code></li>
+<li><span class='mark mark_correct'>✔</span><code class="src src-haskell">(x <span class="org-variable-name">`elem`</span> xs) <span class="org-variable-name">==</span> (x <span class="org-variable-name">`elem`</span> dedup xs)</code></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+All of these properties are true except 4, as can be seen when both <code>xs</code> and <code>ys</code>
+are just the singleton list <code class="src src-haskell">[1]</code>.
+</p>
+
+<p>
+Property 1 is true as removing adjacent duplicates from a sorted list does not
+ruin the sorted ordering.
+</p>
+
+<p>
+Property 2 is true as for sorted lists, removing adjacent duplicates and
+removing all duplicates are identical.
+</p>
+
+<p>
+Property 3 is true as removing adjacent duplicates shouldn't find any 
+more adjacent duplicates the second time around.
+</p>
+
+<p>
+Property 5 is false as a list that already has no duplicates will
+not get any shorter.
+</p>
+
+<p>
+Property 6 is true as <code>dedup</code> will not remove the last of any 
+given value in the list. 
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03e809b" class="outline-2">
+<h2 id="org03e809b"><span class="section-number-2">2</span> Functions for Properties</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgace73f4" class="outline-3">
+<h3 id="orgace73f4"><span class="section-number-3">2.1</span> Question 5</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Here are a set of properties that the function <code>foo</code> must satisfy:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> <span class="org-variable-name">::</span> [a] <span class="org-variable-name">-&gt;</span> (a <span class="org-variable-name">-&gt;</span> b) <span class="org-variable-name">-&gt;</span> [b]
+<span class="org-function-name">foo</span> <span class="org-variable-name">=</span> undefined <span class="org-comment-delimiter">-- </span><span class="org-comment">see below</span>
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_1</span> xs <span class="org-variable-name">=</span> foo xs id <span class="org-variable-name">==</span> xs 
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs f g <span class="org-variable-name">=</span> foo (foo xs f) g <span class="org-variable-name">==</span> foo xs (g <span class="org-variable-name">.</span> f)
+</pre>
+</div>
+
+<p>
+Choose an implementation for <code>foo</code> that satisfies the 
+above properties, and type-checks:
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> xs f <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> xs f <span class="org-variable-name">=</span> xs
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> <span class="org-type">[]</span> f <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">foo</span> (x<span class="org-type">:</span>xs) f <span class="org-variable-name">=</span> x <span class="org-type">:</span> foo xs f
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> <span class="org-type">[]</span> f <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">foo</span> (x<span class="org-type">:</span>xs) f <span class="org-variable-name">=</span> f x <span class="org-type">:</span> foo xs f
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">foo</span> <span class="org-type">[]</span> f <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">foo</span> (x<span class="org-type">:</span>xs) f <span class="org-variable-name">=</span> foo xs f
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+These are the standard laws (<i>functor</i> laws) that <code>map</code> has to obey. And, indeed,
+the correct answer is a <code>map</code> implementation.
+</p>
+
+<p>
+Note that it is actually impossible to write a terminating function that typechecks
+and obeys those properties <i>without</i> correctly implementing <code>map</code>. Try to write
+an incorrect, terminating <code>map</code> that is well-typed and obeys those laws! You will find it 
+is impossible. Later on in the course we will discuss why this is so and how
+we can exploit it to write better programs.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-orgc52ab6f" class="outline-3">
+<h3 id="orgc52ab6f"><span class="section-number-3">2.2</span> Question 6</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Int</span>]
+<span class="org-function-name">bar</span> <span class="org-variable-name">=</span> undefined
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_1</span> xs <span class="org-variable-name">=</span> bar (bar xs) <span class="org-variable-name">==</span> xs
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs <span class="org-variable-name">=</span> length xs <span class="org-variable-name">==</span> length (bar xs)
+
+<span class="org-function-name">prop_3</span> <span class="org-variable-name">::</span> [<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>) <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_3</span> xs f <span class="org-variable-name">=</span> bar (map f xs) <span class="org-variable-name">==</span> map f (bar xs)
+</pre>
+</div>
+
+<p>
+Choose all implementations for <code>bar</code> that satisfy
+the above properties, and type-check:
+</p>
+
+<div class="CHECK">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> <span class="org-type">[]</span>     <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">bar</span> (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span>      bar (filter (<span class="org-variable-name">&lt;=</span>x) xs)
+           <span class="org-variable-name">++</span> x <span class="org-type">:</span> bar (filter (<span class="org-variable-name">&gt;</span> x) xs)
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> xs <span class="org-variable-name">=</span> go xs <span class="org-type">[]</span>
+  <span class="org-keyword">where</span> go <span class="org-type">[]</span>     acc <span class="org-variable-name">=</span> acc
+        go (x<span class="org-type">:</span>xs) acc <span class="org-variable-name">=</span> go xs (x<span class="org-type">:</span>acc)
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> <span class="org-type">[]</span>     <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">bar</span> (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> xs <span class="org-variable-name">++</span> [x]
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> <span class="org-variable-name">=</span> id
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> xs <span class="org-variable-name">=</span> nub xs
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">bar</span> xs <span class="org-variable-name">=</span> replicate (length xs) (maximum xs)
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The first property says the function has to be an <i>involution</i>, that is, applying it twice
+should have the same effect as not applying it at all. Property 2 says that the number
+of elements must remain the same. And property 3 says that <code>bar</code> must commute with <code>map</code>:
+This effectively means that we cannot act upon the contents of the list, as this would allow
+the function given to <code>map</code> to be crafted to break this property.
+</p>
+
+<p>
+Thus, we must permute the elements of the given list without altering them or changing
+their quantity, and we must choose the output permutation without inspecting the input values. 
+Thus, the fast reverse implementation in 2, and the identity function in 4 are all correct implementations.
+</p>
+
+<p>
+The rotation function in 3 breaks idempotence property 1. The remove duplicates function in 5
+breaks the length property in 2. And the replace-with-maximum function in 6 breaks the 
+map-commutation property in 3, for example if <code>f</code> is the absolute value function <code>abs</code> and 
+the list given is <code class="src src-haskell">[2,<span class="org-variable-name">-</span>4]</code>. The quicksort function breaks property 3,
+as the map function could change the relative ordering of the elements.
+</p>
+
+</div>
+
+</div>
+</div>
+<div id="outline-container-org14da058" class="outline-3">
+<h3 id="org14da058"><span class="section-number-3">2.3</span> Question 7</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">baz</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Integer</span>
+<span class="org-function-name">baz</span> <span class="org-variable-name">=</span> undefined
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_1</span> xs ys <span class="org-variable-name">=</span> baz xs <span class="org-variable-name">+</span> baz ys <span class="org-variable-name">==</span> baz (xs <span class="org-variable-name">++</span> ys)
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs <span class="org-variable-name">=</span> baz xs <span class="org-variable-name">==</span> baz (reverse xs) 
+
+<span class="org-function-name">prop_3</span> <span class="org-variable-name">::</span> <span class="org-type">Integer</span> <span class="org-variable-name">-&gt;</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span> 
+<span class="org-function-name">prop_3</span> x xs <span class="org-variable-name">=</span> baz (x<span class="org-type">:</span>xs) <span class="org-variable-name">-</span> x <span class="org-variable-name">==</span> baz xs
+</pre>
+</div>
+
+<p>
+Choose a law-abiding definition for <code>baz</code>, that type checks:
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">baz</span> <span class="org-variable-name">=</span> foldr (<span class="org-variable-name">+</span>) 0
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">baz</span> <span class="org-type">[]</span>     <span class="org-variable-name">=</span> 0
+<span class="org-function-name">baz</span> (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> 1 <span class="org-variable-name">+</span> baz xs
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">baz</span> <span class="org-type">[]</span>     <span class="org-variable-name">=</span> 1
+<span class="org-function-name">baz</span> (x<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> x <span class="org-variable-name">+</span> baz xs
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">baz</span> xs <span class="org-variable-name">=</span> 0
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+This has to be a <code>sum</code> function (option 1). The game is almost given away by the first property alone.
+However <code>prop_1</code> by itself allows for a function that merely returns zero (option 4) or a
+function that returns the length of the list (option 2), however
+<code>prop_3</code> rules these out for us. Option 3 includes an off-by-one error, as the additive identity
+is 0 not 1, and thus would break <code>prop_1</code> for even empty lists. 
+</p>
+
+<p>
+The <code>prop_2</code> property is not really needed here, and is included as a bit of a red herring.
+</p>
+
+</div>
+
+</div>
+</div>
+<div id="outline-container-org963f209" class="outline-3">
+<h3 id="org963f209"><span class="section-number-3">2.4</span> Question 8</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Here is a definition of a function <code>fun</code>, and properties
+for another function <code>nuf</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">fun</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> [<span class="org-type">Integer</span>]
+<span class="org-function-name">fun</span> <span class="org-type">[]</span>       <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">fun</span> [x]      <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">fun</span> (x<span class="org-type">:</span>y<span class="org-type">:</span>xs) <span class="org-variable-name">=</span> (y<span class="org-variable-name">-</span>x)<span class="org-type">:</span>fun (y<span class="org-type">:</span>xs)
+
+<span class="org-function-name">nuf</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Integer</span> <span class="org-variable-name">-&gt;</span> [<span class="org-type">Integer</span>]
+<span class="org-function-name">nuf</span> <span class="org-variable-name">=</span> undefined
+
+<span class="org-function-name">prop_1</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Integer</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_1</span> xs x <span class="org-variable-name">=</span> nuf (fun (x<span class="org-type">:</span>xs)) x <span class="org-variable-name">==</span> (x<span class="org-type">:</span>xs)
+
+<span class="org-function-name">prop_2</span> <span class="org-variable-name">::</span> [<span class="org-type">Integer</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Integer</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Bool</span>
+<span class="org-function-name">prop_2</span> xs x <span class="org-variable-name">=</span> fun (nuf xs x) <span class="org-variable-name">==</span> xs
+</pre>
+</div>
+
+
+<p>
+Choose a definition for <code>nuf</code> that type checks and satisfies
+the given properties:
+</p>
+
+<div class="MULTI">
+<ol class="org-ol">
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">nuf</span> <span class="org-type">[]</span> i <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">nuf</span> (x<span class="org-type">:</span>xs) i <span class="org-variable-name">=</span> (i <span class="org-variable-name">+</span> x) <span class="org-type">:</span> nuf xs (i <span class="org-variable-name">+</span> x)
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">nuf</span> <span class="org-type">[]</span> i <span class="org-variable-name">=</span> [i]
+<span class="org-function-name">nuf</span> (x<span class="org-type">:</span>xs) i <span class="org-variable-name">=</span> (i <span class="org-variable-name">+</span> x) <span class="org-type">:</span> nuf xs (i <span class="org-variable-name">+</span> x)
+</pre>
+</div></li>
+<li><span class='mark mark_correct'>✔</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">nuf</span> xs i <span class="org-variable-name">=</span> scanl (<span class="org-variable-name">\</span>v x <span class="org-variable-name">-&gt;</span> v <span class="org-variable-name">+</span> x) i xs 
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">nuf</span> <span class="org-type">[]</span> i <span class="org-variable-name">=</span> <span class="org-type">[]</span>
+<span class="org-function-name">nuf</span> (x<span class="org-type">:</span>xs) i <span class="org-variable-name">=</span> (i <span class="org-variable-name">+</span> x) <span class="org-type">:</span> nuf xs i
+</pre>
+</div></li>
+<li><span class='mark mark_incorrect'>✗</span><div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">nuf</span> xs i <span class="org-variable-name">=</span> i <span class="org-type">:</span> scanl (<span class="org-variable-name">\</span>v x <span class="org-variable-name">-&gt;</span> v <span class="org-variable-name">+</span> x) i xs 
+</pre>
+</div></li>
+</ol>
+
+</div>
+<div class="NOTES">
+<p>
+The <code>fun</code> function is essentially a discrete differentiation function, finding
+the gradient at each data point. Then, <code>nuf</code> is described by our properties
+as its inverse operation (given a constant <code>C</code> as integration requires).
+</p>
+
+<p>
+If we run <code class="src src-haskell"><span class="org-function-name">fun</span> [1,4,6,3,6]</code> we will get the
+derivative <code class="src src-haskell">[3,2,<span class="org-variable-name">-</span>3,3]</code>. Trying each possible
+implementation:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-variable-name">*&gt;</span> nuf1 [3,2,<span class="org-variable-name">-</span>3,3] 1
+[4,6,3,6]
+<span class="org-variable-name">*&gt;</span> nuf2 [3,2,<span class="org-variable-name">-</span>3,3] 1
+[4,6,3,6,6]
+<span class="org-variable-name">*&gt;</span> nuf3 [3,2,<span class="org-variable-name">-</span>3,3] 1
+[1,4,6,3,6]
+<span class="org-variable-name">*&gt;</span> nuf4 [3,2,<span class="org-variable-name">-</span>3,3] 1
+[4,3,<span class="org-variable-name">-</span>2,4]
+<span class="org-variable-name">*&gt;</span> nuf5 [3,2,<span class="org-variable-name">-</span>3,3] 1
+[1,1,4,6,3,6]
+</pre>
+</div>
+<p>
+As can be seen, only <code>nuf3</code> gives a correct answer that gets us back to our
+starting point.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class='submission_box'> Submission is already closed for this quiz. You can click <a href='https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/submit_quiz?quizname=quiz04'>here</a> to check your submission (if any). </div></div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

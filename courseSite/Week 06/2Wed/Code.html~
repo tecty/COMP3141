@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Code (Wednesday Week 6)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../../index.html">Announcements</a></li>
+<li><a href="../../outline.html">Course Outline</a></li>
+<li><a href="../../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../../Assignment 1/code.html">Code </a></li>
+<li><a href="../../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../../Assignment 2/code.html">Code </a></li>
+<li><a href="../../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Code (Wednesday Week 6)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1c09c99">1. Tuple-based Applicative Formulation</a></li>
+<li><a href="#org7876508">2. Join-based Monad Formulation</a></li>
+<li><a href="#org1c90de8">3. Binary tree applicative functor</a></li>
+<li><a href="#org8dd9183">4. Formula monad example</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1c09c99" class="outline-2">
+<h2 id="org1c09c99"><span class="section-number-2">1</span> Tuple-based Applicative Formulation</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-comment-delimiter">-- </span><span class="org-comment">class  Functor f  where</span>
+<span class="org-comment-delimiter">--    </span><span class="org-comment">fmap        :: (a -&gt; b) -&gt; f a -&gt; f b</span>
+<span class="org-comment-delimiter">-- </span><span class="org-comment">class Functor f =&gt; Applicative f where</span>
+<span class="org-comment-delimiter">--    </span><span class="org-comment">pure :: a -&gt; f a</span>
+<span class="org-comment-delimiter">--   </span><span class="org-comment">(&lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b</span>
+
+<span class="org-comment-delimiter">-- </span><span class="org-comment">It's possible to express Applicative equivalently using this </span>
+<span class="org-comment-delimiter">-- </span><span class="org-comment">operation as primitive:</span>
+<span class="org-keyword">class</span> <span class="org-type">Functor</span> f <span class="org-variable-name">=&gt;</span> <span class="org-type">App</span> f <span class="org-keyword">where</span>
+  pure <span class="org-variable-name">::</span> a <span class="org-variable-name">-&gt;</span> f a
+  tuple <span class="org-variable-name">::</span> f a <span class="org-variable-name">-&gt;</span> f b <span class="org-variable-name">-&gt;</span> f (a,b)
+
+<span class="org-comment-delimiter">-- </span><span class="org-comment">Using this operation, fmap and pure, implement &lt;*&gt;.</span>
+(<span class="org-function-name">&lt;**&gt;</span>) <span class="org-variable-name">::</span> <span class="org-type">App</span> f <span class="org-variable-name">=&gt;</span> f (a <span class="org-variable-name">-&gt;</span> b) <span class="org-variable-name">-&gt;</span> f a <span class="org-variable-name">-&gt;</span> f b
+(<span class="org-function-name">&lt;**&gt;</span>) fab fa <span class="org-variable-name">=</span> fmap (<span class="org-variable-name">\</span>(f,x) <span class="org-variable-name">-&gt;</span> f x) (tuple fab fa)
+
+<span class="org-comment-delimiter">-- </span><span class="org-comment">And, using &lt;*&gt; and pure, implement tuple.</span>
+<span class="org-comment-delimiter">-- </span><span class="org-comment">fmap :: (a -&gt; b) -&gt; f a -&gt; f b</span>
+<span class="org-comment-delimiter">-- </span><span class="org-comment">fmap ::  (a -&gt; (b -&gt; (a,b))) -&gt; fa -&gt; f (b -&gt; (a,b)) </span>
+<span class="org-function-name">tuple'</span> <span class="org-variable-name">::</span> <span class="org-type">Applicative</span> f <span class="org-variable-name">=&gt;</span> f a <span class="org-variable-name">-&gt;</span> f b <span class="org-variable-name">-&gt;</span> f (a,b)
+<span class="org-function-name">tuple'</span> fa fb <span class="org-variable-name">=</span> (fmap <span class="org-type">(,)</span> fa) <span class="org-variable-name">&lt;*&gt;</span> fb
+<span class="org-function-name">tuple''</span> fa fb <span class="org-variable-name">=</span> <span class="org-type">(,)</span> <span class="org-variable-name">&lt;$&gt;</span> fa <span class="org-variable-name">&lt;*&gt;</span> fb
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7876508" class="outline-2">
+<h2 id="org7876508"><span class="section-number-2">2</span> Join-based Monad Formulation</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-comment-delimiter">-- </span><span class="org-comment">It's also possible to express Monad using this alternative operation:</span>
+<span class="org-keyword">class</span> <span class="org-type">Applicative</span> m <span class="org-variable-name">=&gt;</span> <span class="org-type">Mon</span> m <span class="org-keyword">where</span>
+  join <span class="org-variable-name">::</span> m (m a) <span class="org-variable-name">-&gt;</span> m a
+
+(<span class="org-function-name">&gt;&gt;&gt;=</span>) <span class="org-variable-name">::</span> <span class="org-type">Mon</span> m <span class="org-variable-name">=&gt;</span> m a <span class="org-variable-name">-&gt;</span> (a <span class="org-variable-name">-&gt;</span> m b) <span class="org-variable-name">-&gt;</span> m b
+(<span class="org-function-name">&gt;&gt;&gt;=</span>) a f <span class="org-variable-name">=</span> join (fmap f a)
+
+<span class="org-function-name">join'</span> <span class="org-variable-name">::</span> <span class="org-type">Monad</span> m <span class="org-variable-name">=&gt;</span> m (m a) <span class="org-variable-name">-&gt;</span> m a
+<span class="org-function-name">join'</span> a <span class="org-variable-name">=</span>  a <span class="org-variable-name">&gt;&gt;=</span> id
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c90de8" class="outline-2">
+<h2 id="org1c90de8"><span class="section-number-2">3</span> Binary tree applicative functor</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Tree</span> a 
+   <span class="org-variable-name">=</span> <span class="org-type">Leaf</span>
+   <span class="org-variable-name">|</span> <span class="org-type">Node</span> a (<span class="org-type">Tree</span> a) (<span class="org-type">Tree</span> a)
+    <span class="org-keyword">deriving</span> (<span class="org-type">Show</span>)
+
+<span class="org-keyword">instance</span> <span class="org-type">Functor</span> <span class="org-type">Tree</span> <span class="org-keyword">where</span> 
+    fmap f <span class="org-type">Leaf</span> <span class="org-variable-name">=</span> <span class="org-type">Leaf</span>
+    fmap f (<span class="org-type">Node</span> x t1 t2) 
+        <span class="org-variable-name">=</span> <span class="org-type">Node</span> (f x) (fmap f t1) (fmap f t2)
+
+<span class="org-keyword">instance</span> <span class="org-type">Applicative</span> <span class="org-type">Tree</span> <span class="org-keyword">where</span>
+    pure x  <span class="org-variable-name">=</span> <span class="org-type">Node</span> x (pure x) (pure x) <span class="org-comment-delimiter">-- </span><span class="org-comment">infinite tree  </span>
+    <span class="org-type">Node</span> f fl fr <span class="org-variable-name">&lt;*&gt;</span> <span class="org-type">Node</span> x xl xr <span class="org-variable-name">=</span> <span class="org-type">Node</span> (f x) (fl <span class="org-variable-name">&lt;*&gt;</span> xl) (fr <span class="org-variable-name">&lt;*&gt;</span> xr)
+    <span class="org-type">Leaf</span> <span class="org-variable-name">&lt;*&gt;</span> <span class="org-keyword">_</span> <span class="org-variable-name">=</span> <span class="org-type">Leaf</span>
+    <span class="org-keyword">_</span> <span class="org-variable-name">&lt;*&gt;</span> <span class="org-type">Leaf</span> <span class="org-variable-name">=</span> <span class="org-type">Leaf</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8dd9183" class="outline-2">
+<h2 id="org8dd9183"><span class="section-number-2">4</span> Formula monad example</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">import</span> <span class="org-type">Control.Monad</span> (ap)
+
+<span class="org-keyword">data</span> <span class="org-type">Variable</span> <span class="org-variable-name">=</span> <span class="org-type">A</span> <span class="org-variable-name">|</span> <span class="org-type">B</span> <span class="org-variable-name">|</span> <span class="org-type">C</span> <span class="org-keyword">deriving</span> (<span class="org-type">Show</span>,<span class="org-type">Eq</span>)
+
+<span class="org-keyword">data</span> <span class="org-type">Formula</span> v <span class="org-variable-name">=</span> <span class="org-type">Var</span> v
+               <span class="org-variable-name">|</span> <span class="org-type">Plus</span> (<span class="org-type">Formula</span> v) (<span class="org-type">Formula</span> v)
+               <span class="org-variable-name">|</span> <span class="org-type">Times</span> (<span class="org-type">Formula</span> v) (<span class="org-type">Formula</span> v)
+               <span class="org-variable-name">|</span> <span class="org-type">Constant</span> <span class="org-type">Int</span>
+               <span class="org-keyword">deriving</span> (<span class="org-type">Eq</span>,<span class="org-type">Show</span>)       
+<span class="org-function-name">example</span> <span class="org-variable-name">::</span> <span class="org-type">Formula</span> <span class="org-type">Variable</span>
+<span class="org-function-name">example</span> <span class="org-variable-name">=</span> <span class="org-type">Plus</span> (<span class="org-type">Times</span> (<span class="org-type">Var</span> <span class="org-type">A</span>) (<span class="org-type">Var</span> <span class="org-type">A</span>)) (<span class="org-type">Times</span> (<span class="org-type">Var</span> <span class="org-type">B</span>) (<span class="org-type">Var</span> <span class="org-type">C</span>))
+
+<span class="org-keyword">instance</span> <span class="org-type">Functor</span> <span class="org-type">Formula</span> <span class="org-keyword">where</span> <span class="org-comment-delimiter">-- </span><span class="org-comment">fmap is renaming variables</span>
+   <span class="org-comment-delimiter">-- </span><span class="org-comment">fmap :: (a-&gt;b) -&gt; Formula a -&gt; Formula b</span>
+   fmap f (<span class="org-type">Var</span> x)      <span class="org-variable-name">=</span> <span class="org-type">Var</span> (f x)
+   fmap f (<span class="org-type">Plus</span> a b)   <span class="org-variable-name">=</span> <span class="org-type">Plus</span> (fmap f a) (fmap f b)
+   fmap f (<span class="org-type">Times</span> a b)  <span class="org-variable-name">=</span> <span class="org-type">Times</span> (fmap f a) (fmap f b) 
+   fmap f (<span class="org-type">Constant</span> i) <span class="org-variable-name">=</span> <span class="org-type">Constant</span> i
+
+ <span class="org-comment-delimiter">-- </span><span class="org-comment">try fmap (const B) example</span>
+
+ <span class="org-comment-delimiter">-- </span><span class="org-comment">Applicatives don't make much sense here, so we can use</span>
+ <span class="org-comment-delimiter">-- </span><span class="org-comment">the `ap` function from Control.Monad to implement &lt;*&gt; </span>
+ <span class="org-comment-delimiter">-- </span><span class="org-comment">in terms of &gt;&gt;=, which is easier in this case to write than &lt;*&gt;:</span>
+<span class="org-keyword">instance</span> <span class="org-type">Applicative</span> <span class="org-type">Formula</span> <span class="org-keyword">where</span>
+ <span class="org-comment-delimiter">--  </span><span class="org-comment">(&lt;*&gt;) :: Formula (a -&gt; b) -&gt; Formula a -&gt; Formula b</span>
+   (<span class="org-variable-name">&lt;*&gt;</span>) <span class="org-variable-name">=</span> ap
+    <span class="org-keyword">where</span> 
+      ap <span class="org-variable-name">::</span> <span class="org-type">Monad</span> m <span class="org-variable-name">=&gt;</span> m (a <span class="org-variable-name">-&gt;</span> b) <span class="org-variable-name">-&gt;</span> m a <span class="org-variable-name">-&gt;</span> m b
+      ap f a <span class="org-variable-name">=</span> <span class="org-keyword">do</span> 
+                 f' <span class="org-variable-name">&lt;-</span> f 
+                 a' <span class="org-variable-name">&lt;-</span> a
+                 pure (f' a')
+<span class="org-comment-delimiter">--   </span><span class="org-comment">pure :: a -&gt; Formula a              </span>
+   pure <span class="org-variable-name">=</span> <span class="org-type">Var</span>
+
+<span class="org-keyword">instance</span> <span class="org-type">Monad</span> <span class="org-type">Formula</span> <span class="org-keyword">where</span>  <span class="org-comment-delimiter">-- </span><span class="org-comment">&gt;&gt;= is substitution</span>
+   <span class="org-comment-delimiter">-- </span><span class="org-comment">(&gt;&gt;=) :: Formula a -&gt; (a -&gt; Formula b) -&gt; Formula b</span>
+   <span class="org-type">Var</span> x      <span class="org-variable-name">&gt;&gt;=</span> f <span class="org-variable-name">=</span> f x
+   <span class="org-type">Plus</span> a b   <span class="org-variable-name">&gt;&gt;=</span> f <span class="org-variable-name">=</span> <span class="org-type">Plus</span> (a <span class="org-variable-name">&gt;&gt;=</span> f) (b <span class="org-variable-name">&gt;&gt;=</span> f)
+   <span class="org-type">Times</span> a b  <span class="org-variable-name">&gt;&gt;=</span> f <span class="org-variable-name">=</span> <span class="org-type">Times</span> (a <span class="org-variable-name">&gt;&gt;=</span> f) (b <span class="org-variable-name">&gt;&gt;=</span> f)
+   <span class="org-type">Constant</span> x <span class="org-variable-name">&gt;&gt;=</span> f <span class="org-variable-name">=</span> <span class="org-type">Constant</span> x
+
+<span class="org-function-name">subst</span> <span class="org-type">A</span> <span class="org-variable-name">=</span> <span class="org-type">Constant</span> 3
+<span class="org-function-name">subst</span> <span class="org-type">B</span> <span class="org-variable-name">=</span> <span class="org-type">Constant</span> 6
+<span class="org-function-name">subst</span> <span class="org-type">C</span> <span class="org-variable-name">=</span> <span class="org-type">Constant</span> 1
+
+<span class="org-comment-delimiter">-- </span><span class="org-comment">try `example &gt;&gt;= subst`</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>

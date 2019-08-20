@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-07 Wed 18:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exercise (Week 6)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Liam O'Connor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.css'/><link rel='alternate' type='application/rss+xml'
+                                       href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml' title='RSS for announcements'><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/bundle.js' type='text/javascript' ></script><script src='https://www.cse.unsw.edu.au/~cs3141/19t2/statics/collapses.js' type='text/javascript' ></script>
+                                       <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<img src="http://www.cse.unsw.edu.au/~cs3141/19t2/statics/title.png" alt="COMP3141 Software System Design and Implementation"
+     style="position:absolute; left:0px; top:0px; z-index:-1;max-width:800px;width:100%;"/>
+<p style="text-align:center; font-weight:bold; display:block;">Software System Design and Implementation</p>
+<small style="text-align:center; display:block;">Term 2, 2019</small>
+<hr/>
+<ul class="org-ul collapsibleList">
+<li><a href="../index.html">Announcements</a></li>
+<li><a href="../outline.html">Course Outline</a></li>
+<li><a href="../Lectures.html">Course Schedule</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">Gallery</a></li>
+<li><a href="https://moodle.telt.unsw.edu.au/course/view.php?id=40872">Moodle - Recordings</a></li>
+<li><a href="https://piazza.com/class/jw3no041p794do">Piazza Forum</a></li>
+<li><a href="../HaskellSetup.html">Setting up Haskell</a></li>
+<li>Assignment 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 1/code.html">Code </a></li>
+<li><a href="../Assignment 1/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Assignment 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Assignment 2/code.html">Code </a></li>
+<li><a href="../Assignment 2/Spec.pdf">Spec</a></li>
+</ul></li>
+<li>Exam
+<ul class="org-ul collapsibleList">
+<li><a href="../Exam/Sample Exam.pdf">Sample Exam</a></li>
+<li><a href="../Exam/Sample Solutions.pdf">Sample Solutions</a></li>
+</ul></li>
+<li>Week 1
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/Quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 01/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 01/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 01/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 01/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 2
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/exercise.html">Exercise </a></li>
+<li><a href="../Week 02/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 02/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 02/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 02/2Wed/Board.pdf">Board</a></li>
+<li><a href="../Week 02/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 02/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 02/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 3
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/exercise.html">Exercise </a></li>
+<li><a href="../Week 03/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 03/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 03/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 03/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 03/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 4
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/exercise.html">Exercise </a></li>
+<li><a href="../Week 04/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/1Tue/code.html">Code </a></li>
+<li><a href="../Week 04/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 04/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 04/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 04/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 6
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/exercise.html">Exercise </a></li>
+<li><a href="../Week 06/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 06/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 06/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 06/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 06/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 7
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/notes.html">Additional Reading </a></li>
+<li><a href="../Week 07/exercise.html">Exercise </a></li>
+<li><a href="../Week 07/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 07/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 07/2Wed/code.html">Code </a></li>
+<li><a href="../Week 07/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 07/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 8
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/exercise.html">Exercise </a></li>
+<li><a href="../Week 08/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/1Tue/Code.html">Code </a></li>
+<li><a href="../Week 08/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 08/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 08/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 08/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 9
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/quiz.html">Quiz </a></li>
+<li>Tuesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/1Tue/Board.pdf">Board</a></li>
+<li><a href="../Week 09/1Tue/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/1Tue/Slides.pdf">Slides</a></li>
+</ul></li>
+<li>Wednesday
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 09/2Wed/Code.html">Code </a></li>
+<li><a href="../Week 09/2Wed/Condensed Slides.pdf">Condensed Slides</a></li>
+<li><a href="../Week 09/2Wed/Slides.pdf">Slides</a></li>
+</ul></li>
+</ul></li>
+<li>Week 10
+<ul class="org-ul collapsibleList">
+<li><a href="../Week 10/Guest Slides.pdf">Guest Slides</a></li>
+</ul></li>
+</ul>
+<script type='text/javascript'>CollapsibleLists.apply();</script>
+</div>
+<div id="content">
+<h1 class="title">Exercise (Week 6)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9c8fc54">1. Reverse Polish Notation</a>
+<ul>
+<li><a href="#orgb6bc5b5">1.1. Parsing (1 Mark)</a></li>
+<li><a href="#org9fd343d">1.2. Stack Operations (2 Marks)</a></li>
+<li><a href="#orgac80954">1.3. Evaluating (3 Marks)</a></li>
+<li><a href="#orgb83e314">1.4. Putting it together (1 Mark)</a></li>
+</ul>
+</li>
+<li><a href="#orgb23d8c1">2. Peer review (2 Marks)</a></li>
+<li><a href="#org2c49b17">3. Submission instructions</a></li>
+</ul>
+</div>
+</div>
+
+<div class="figure">
+<p><img src="../statics/Ex04-icon.png" alt="Ex04-icon.png" style="width:42px;" />
+</p>
+</div>
+
+<p>
+<b>DUE</b>: Tue 16 July 2019 14:00:00 
+</p>
+<div class='tabset'><input type=radio name=tabset1 id=tab1_1 checked><label for='tab1_1'>CSE</label><input type=radio name=tabset1 id=tab1_2><label for='tab1_2'>Stack</label><div class="TABS">
+<div class="TAB">
+<p>
+Download the <a href="../statics/Ex04.tar.gz">exercise tarball</a> and extract it to a directory in your 
+home directory at CSE. This tarball contains a file, called <code>Ex04.hs</code>,
+wherein you will do all of your programming.
+</p>
+
+<p>
+To test your code, run the following shell commands to open a GHCi 
+session:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ 3141
+newclass starting new subshell for class COMP3141...
+$ cabal repl
+Resolving dependencies...
+Configuring Ex04-1.0...
+Preprocessing executable <span class="org-string">'Ex04'</span> for Ex04-1.0..
+GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Ex04          (Ex04.hs, interpreted)
+Ok, one module loaded.
+*Ex04&gt; calculate <span class="org-string">"1 1 +"</span>
+...
+</pre>
+</div>
+
+<p>
+Note that you will only need to submit <code>Ex04.hs</code>, so only make changes
+to that file.
+</p>
+
+</div>
+
+<div class="TAB">
+<p>
+Download the <a href="../statics/Ex04.tar.gz">exercise tarball</a> and extract it to a directory on
+your local machine. This tarball contains a file, called <code>Ex04.hs</code>,
+wherein you will do all of your programming.
+</p>
+
+<p>
+To test your code, run the following shell commands to open a GHCi 
+session:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ stack repl
+Configuring GHCi with the following packages: Ex04
+Using main module: 1. Package <span class="org-string">'Ex04'</span> component exe:Ex04 ...
+GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
+[1 of 2] Compiling Ex04          (Ex04.hs, interpreted)
+[2 of 2] Compiling Main          (Main.hs, interpreted)
+Ok, two modules loaded.
+*Main Ex04&gt; calculate <span class="org-string">"1 1 +"</span>
+...
+</pre>
+</div>
+<p>
+Note that you will only need to submit <code>Ex04.hs</code>, so only make changes
+to that file.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org9c8fc54" class="outline-2">
+<h2 id="org9c8fc54"><span class="section-number-2">1</span> Reverse Polish Notation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> is a common way to represent arithmetic expressions, where each operator appears after
+the operands it works on. Below are a number of examples in a sample GHCi session. Your task in this exercise
+is to develop a RPN calculator using a variety of monadic functions. You should be able to evaluate the same examples
+to the same results after you have completed this exercise:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-variable-name">*</span><span class="org-type">Ex04</span><span class="org-variable-name">&gt;</span> calculate <span class="org-string">"3 4 +"</span>
+<span class="org-type">Just</span> 7
+<span class="org-variable-name">*</span><span class="org-type">Ex04</span><span class="org-variable-name">&gt;</span> calculate <span class="org-string">"3 4 - 5 +"</span>
+<span class="org-type">Just</span> 4
+<span class="org-variable-name">*</span><span class="org-type">Ex04</span><span class="org-variable-name">&gt;</span> calculate <span class="org-string">"3 4 2 / *"</span>
+<span class="org-type">Just</span> 6
+<span class="org-variable-name">*</span><span class="org-type">Ex04</span><span class="org-variable-name">&gt;</span> calculate <span class="org-string">"3 4 2 / * +"</span>
+<span class="org-type">Nothing</span>
+</pre>
+</div>
+
+<p>
+Generally, evaluation of RPN proceeds by looking at each token (number or operator), one at a time. We evaluate a number by pushing it on to
+a <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>, and we evaluate an operator <code>o</code> by popping two numbers <code>y</code> and <code>x</code> from the stack, and pushing <code>o x y</code> back on. The number left on
+the top of the stack at the end of evaluating is the result of the expression.
+</p>
+</div>
+
+<div id="outline-container-orgb6bc5b5" class="outline-3">
+<h3 id="orgb6bc5b5"><span class="section-number-3">1.1</span> Parsing (1 Mark)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+We define a <code>Token</code> as either a number or a binary operator:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">data</span> <span class="org-type">Token</span> <span class="org-variable-name">=</span> <span class="org-type">Number</span> <span class="org-type">Int</span> <span class="org-variable-name">|</span> <span class="org-type">Operator</span> (<span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Int</span>)
+</pre>
+</div>
+
+<p>
+First, we need a way to translate <code>String</code> values into proper calculable expressions, that is, lists of <code>Token</code>. We have already defined a function that will attempt
+to convert a single word into a single <code>Token</code>, called <code>parseToken</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">parseToken</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Maybe</span> <span class="org-type">Token</span>
+<span class="org-function-name">parseToken</span> <span class="org-string">"+"</span> <span class="org-variable-name">=</span> <span class="org-type">Just</span> (<span class="org-type">Operator</span> (<span class="org-variable-name">+</span>))
+<span class="org-function-name">parseToken</span> <span class="org-string">"-"</span> <span class="org-variable-name">=</span> <span class="org-type">Just</span> (<span class="org-type">Operator</span> (<span class="org-variable-name">-</span>))
+<span class="org-function-name">parseToken</span> <span class="org-string">"/"</span> <span class="org-variable-name">=</span> <span class="org-type">Just</span> (<span class="org-type">Operator</span> div)
+<span class="org-function-name">parseToken</span> <span class="org-string">"*"</span> <span class="org-variable-name">=</span> <span class="org-type">Just</span> (<span class="org-type">Operator</span> (<span class="org-variable-name">*</span>))
+<span class="org-function-name">parseToken</span> str <span class="org-variable-name">=</span> fmap <span class="org-type">Number</span> (readMaybe str)
+</pre>
+</div>
+
+<p>
+Your first task is to implement the function <code>tokenise</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">tokenise</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Maybe</span> [<span class="org-type">Token</span>]
+</pre>
+</div>
+
+<p>
+This function must break the string into words (the built-in <code>words</code> function will be useful), and then attempt to parse each one into a <code>Token</code>, returning
+a non-<code>Nothing</code> result only if every word can be parsed.
+</p>
+
+<p>
+Note that you can (and should) exploit the fact that <code>Maybe</code> is an instance of <code>Monad</code>, <code>Applicative</code> and <code>Functor</code>. This will enable you to make the above function
+into a short, one-line definition.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9fd343d" class="outline-3">
+<h3 id="org9fd343d"><span class="section-number-3">1.2</span> Stack Operations (2 Marks)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Next, in order to evaluate RPN expressions, we need a convenient way to model computations which manipulate a stack, and can possibly fail (for example, if we 
+were to try to pop from an empty stack).
+</p>
+
+<p>
+In Haskell, such a computation could be modelled as a function that, given an input stack (of <code>Int</code>), will either fail 
+(returning <code>Nothing</code>) or return <code>Just</code> an output stack with an additional return value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">newtype</span> <span class="org-type">Calc</span> a <span class="org-variable-name">=</span> <span class="org-type">C</span> ([<span class="org-type">Int</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Maybe</span> ([<span class="org-type">Int</span>], a))
+</pre>
+</div>
+
+<p>
+Implement the two basic stack operations, <code>push</code> and <code>pop</code> as <code>Calc</code> computations.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">pop</span>  <span class="org-variable-name">::</span> <span class="org-type">Calc</span> <span class="org-type">Int</span>
+<span class="org-function-name">push</span> <span class="org-variable-name">::</span> <span class="org-type">Int</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Calc</span> <span class="org-type">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac80954" class="outline-3">
+<h3 id="orgac80954"><span class="section-number-3">1.3</span> Evaluating (3 Marks)</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+We have provided instances of <code>Monad</code>, <code>Applicative</code> and <code>Functor</code> for <code>Calc</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-keyword">instance</span> <span class="org-type">Functor</span> <span class="org-type">Calc</span> <span class="org-keyword">where</span>
+  fmap f (<span class="org-type">C</span> sa) <span class="org-variable-name">=</span> <span class="org-type">C</span> <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>s <span class="org-variable-name">-&gt;</span>
+      <span class="org-keyword">case</span> sa s <span class="org-keyword">of</span>
+        <span class="org-type">Nothing</span>      <span class="org-variable-name">-&gt;</span> <span class="org-type">Nothing</span>
+        <span class="org-type">Just</span> (s', a) <span class="org-variable-name">-&gt;</span> <span class="org-type">Just</span> (s', f a)
+
+<span class="org-keyword">instance</span> <span class="org-type">Applicative</span> <span class="org-type">Calc</span> <span class="org-keyword">where</span>
+  pure x <span class="org-variable-name">=</span> <span class="org-type">C</span> (<span class="org-variable-name">\</span>s <span class="org-variable-name">-&gt;</span> <span class="org-type">Just</span> (s,x))
+  <span class="org-type">C</span> sf <span class="org-variable-name">&lt;*&gt;</span> <span class="org-type">C</span> sx <span class="org-variable-name">=</span> <span class="org-type">C</span> <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>s <span class="org-variable-name">-&gt;</span>
+      <span class="org-keyword">case</span> sf s <span class="org-keyword">of</span>
+          <span class="org-type">Nothing</span>     <span class="org-variable-name">-&gt;</span> <span class="org-type">Nothing</span>
+          <span class="org-type">Just</span> (s',f) <span class="org-variable-name">-&gt;</span> <span class="org-keyword">case</span> sx s' <span class="org-keyword">of</span>
+              <span class="org-type">Nothing</span>      <span class="org-variable-name">-&gt;</span> <span class="org-type">Nothing</span>
+              <span class="org-type">Just</span> (s'',x) <span class="org-variable-name">-&gt;</span> <span class="org-type">Just</span> (s'', f x)
+
+<span class="org-keyword">instance</span> <span class="org-type">Monad</span> <span class="org-type">Calc</span> <span class="org-keyword">where</span>
+  return <span class="org-variable-name">=</span> pure
+  <span class="org-type">C</span> sa <span class="org-variable-name">&gt;&gt;=</span> f <span class="org-variable-name">=</span> <span class="org-type">C</span> <span class="org-variable-name">$</span> <span class="org-variable-name">\</span>s <span class="org-variable-name">-&gt;</span>
+      <span class="org-keyword">case</span> sa s <span class="org-keyword">of</span>
+          <span class="org-type">Nothing</span>     <span class="org-variable-name">-&gt;</span> <span class="org-type">Nothing</span>
+          <span class="org-type">Just</span> (s',a) <span class="org-variable-name">-&gt;</span> unwrapCalc (f a) s'
+    <span class="org-keyword">where</span> unwrapCalc (<span class="org-type">C</span> a) <span class="org-variable-name">=</span> a
+</pre>
+</div>
+
+<p>
+All three instances make sure that the whole computation will return <code>Nothing</code> if any subcomputation returns <code>Nothing</code>. Furthermore, the
+<code>Applicative</code> and <code>Monad</code> instances allow us to <i>thread the stack</i> through multiple computations without manually keeping track of this state. For example, the
+<code>Calc</code> computation that adds the two topmost elements of the stack and pushes the result back to the stack can be defined as:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">addTwo</span> <span class="org-variable-name">::</span> <span class="org-type">Calc</span> <span class="org-type">()</span>
+<span class="org-function-name">addTwo</span> <span class="org-variable-name">=</span> <span class="org-keyword">do</span>
+  x <span class="org-variable-name">&lt;-</span> pop
+  y <span class="org-variable-name">&lt;-</span> pop
+  push (x <span class="org-variable-name">+</span> y)
+</pre>
+</div>
+
+<p>
+By threading the stack through in the <code>Monad</code> instance here, we can just treat the stack as some implicit state that we manipulate abstractly with <code>Calc</code>
+computations. This allows us to make code much shorter and cleaner.
+</p>
+
+<p>
+Using the above instances for <code>Calc</code>, define a function <code>evaluate</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">evaluate</span> <span class="org-variable-name">::</span> [<span class="org-type">Token</span>] <span class="org-variable-name">-&gt;</span> <span class="org-type">Calc</span> <span class="org-type">Int</span>
+</pre>
+</div>
+
+<p>
+This should evaluate a list of <code>Token</code> as described above, using the stack operations you defined earlier, finally returning the topmost element of 
+the stack.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb83e314" class="outline-3">
+<h3 id="orgb83e314"><span class="section-number-3">1.4</span> Putting it together (1 Mark)</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Lastly, define a function <code>calculate</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="org-function-name">calculate</span> <span class="org-variable-name">::</span> <span class="org-type">String</span> <span class="org-variable-name">-&gt;</span> <span class="org-type">Maybe</span> <span class="org-type">Int</span>
+</pre>
+</div>
+<p>
+That will first attempt to parse the given string with <code>tokenise</code> to get a list of tokens.
+If that succeeds, it should use <code>evaluate</code> to get a <code>Calc</code> computation corresponding to that list of tokens.
+Then, it should run that computation starting with an empty stack, returning just the resultant integer from that computation, if any.
+If the stack has more than one element when <code>calculate</code> runs, it should return the topmost element.
+</p>
+
+<p>
+Note that once again you can use the <code>Monad</code>, <code>Applicative</code> and <code>Functor</code> instances of <code>Maybe</code> to succinctly implement this function.
+</p>
+
+<p>
+After implementing this function, test it with the examples listed at the beginning of this exercise, and try your own examples also.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb23d8c1" class="outline-2">
+<h2 id="orgb23d8c1"><span class="section-number-2">2</span> Peer review (2 Marks)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Now that you've all made some <a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/gallery">fantastic artworks</a>, we'd like each of you that submitted a picture to review one other student's picture. To do this, just log in to the
+peer review form <a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/peer_review">here</a>,
+and answer the questions the form asks you. Make sure you review <b>carefully</b> and <b>kindly</b>, because your review will be posted on the gallery page for that picture, and your identity is revealed to the
+person who made the image. To check the reviews for your own artworks, you can click <a href="https://cgi.cse.unsw.edu.au/~cs3141/cgi-bin/gal/19t2/peer_review/check">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2c49b17" class="outline-2">
+<h2 id="org2c49b17"><span class="section-number-2">3</span> Submission instructions</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+You can submit your exercise by typing:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">$ give cs3141 Ex04 Ex04.hs
+</pre>
+</div>
+<p>
+on a CSE terminal, or by using the <code>give</code> web interface. Your file <i>must</i> be named <code>Ex04.hs</code> (case-sensitive!). 
+A dry-run test will partially autotest your solution at submission time. To get full marks, you will need to perform further testing yourself.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class='date'> 2019-08-07 Wed 18:15 </p><small><a type='application/rss+xml' href='https://www.cse.unsw.edu.au/~cs3141/19t2/index.xml'>Announcements RSS</a></small>
+</div>
+</body>
+</html>
